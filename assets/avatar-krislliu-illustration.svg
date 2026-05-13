@@ -1,0 +1,59 @@
+<svg width="720" height="860" viewBox="0 0 720 860" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="avatarTitle avatarDesc">
+  <title id="avatarTitle">Stylized portrait illustration of Krislliu</title>
+  <desc id="avatarDesc">A minimal flat illustration showing a person with short dark hair and glasses on a soft blue background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="90" y1="64" x2="640" y2="816" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F8FF"/>
+      <stop offset="1" stop-color="#ECF1FA"/>
+    </linearGradient>
+    <linearGradient id="sweater" x1="360" y1="516" x2="360" y2="832" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF2F7"/>
+      <stop offset="1" stop-color="#DEE5F2"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="360" y1="582" x2="360" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3F6FB6"/>
+      <stop offset="1" stop-color="#2E5797"/>
+    </linearGradient>
+    <filter id="soft" x="0" y="0" width="720" height="860" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect x="24" y="24" width="672" height="812" rx="44" fill="url(#bg)" stroke="#D9E3F4"/>
+  <circle cx="520" cy="218" r="128" fill="#DCE7F8"/>
+  <circle cx="204" cy="708" r="130" fill="#E3EAF8"/>
+
+  <g filter="url(#soft)" opacity="0.5">
+    <ellipse cx="370" cy="774" rx="196" ry="40" fill="#C6D4EA"/>
+  </g>
+
+  <ellipse cx="214" cy="414" rx="30" ry="40" fill="#F1C3B4"/>
+  <ellipse cx="506" cy="414" rx="30" ry="40" fill="#F1C3B4"/>
+  <path d="M360 226C452 226 526 302 526 396V444C526 548 451 618 360 618C269 618 194 548 194 444V396C194 302 268 226 360 226Z" fill="#F5CDBE"/>
+
+  <path d="M198 388C192 304 248 198 360 186C478 174 536 268 532 360C516 330 486 304 450 290C420 278 390 270 356 274C322 278 292 292 266 314C242 334 220 360 198 388Z" fill="#242A35"/>
+  <path d="M194 396C212 352 248 314 292 292C334 270 378 262 430 278C470 292 508 320 526 362C526 320 512 272 480 236C450 200 406 180 356 180C306 180 260 198 228 234C196 270 186 326 194 396Z" fill="#1A1F2B"/>
+
+  <g>
+    <rect x="252" y="352" width="116" height="74" rx="20" fill="#F9FBFF" stroke="#151A24" stroke-width="8"/>
+    <rect x="352" y="352" width="116" height="74" rx="20" fill="#F9FBFF" stroke="#151A24" stroke-width="8"/>
+    <rect x="342" y="380" width="36" height="12" rx="6" fill="#151A24"/>
+    <path d="M246 388H222" stroke="#151A24" stroke-width="8" stroke-linecap="round"/>
+    <path d="M498 388H474" stroke="#151A24" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <ellipse cx="304" cy="390" rx="13" ry="10" fill="#3B2F2F"/>
+  <ellipse cx="416" cy="390" rx="13" ry="10" fill="#3B2F2F"/>
+  <circle cx="300" cy="386" r="3" fill="#FFFFFF"/>
+  <circle cx="412" cy="386" r="3" fill="#FFFFFF"/>
+
+  <path d="M318 454C336 468 384 468 402 454" stroke="#C89383" stroke-width="6" stroke-linecap="round"/>
+  <path d="M314 520C334 534 386 534 406 520" stroke="#B66674" stroke-width="8" stroke-linecap="round"/>
+
+  <path d="M190 684C198 616 248 566 318 550L342 624H378L402 550C472 566 522 616 530 684V732H190V684Z" fill="url(#sweater)"/>
+  <path d="M316 550H404V732H316V550Z" fill="url(#shirt)"/>
+  <path d="M342 624L360 654L378 624" fill="#FFFFFF"/>
+
+  <path d="M182 732H538" stroke="#CBD8ED" stroke-width="4"/>
+</svg>

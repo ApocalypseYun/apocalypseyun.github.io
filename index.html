@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Krislliu | AI Backend Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260514a" />
+  <link rel="shortcut icon" href="favicon.svg?v=20260514a" />
   <style>
     :root {
       --bg: oklch(99% 0.002 240);
@@ -230,6 +232,48 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .portrait-card {
+      margin: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .portrait-frame {
+      background:
+        radial-gradient(circle at 80% 14%, color-mix(in oklch, var(--accent) 16%, var(--surface)), transparent 42%),
+        linear-gradient(180deg, color-mix(in oklch, var(--surface) 84%, var(--bg)), var(--surface));
+      padding: 0.9rem;
+    }
+
+    .portrait-frame img {
+      display: block;
+      inline-size: 100%;
+      block-size: auto;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) - 4px);
+      background: var(--surface);
+    }
+
+    .portrait-caption {
+      margin: 0;
+      padding: 0.8rem 1rem 0.95rem;
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
     }
 
     .button,
@@ -629,30 +673,44 @@
             <span class="button-secondary" data-i18n="heroGithub">GitHub: github.com/apocalypseyun</span>
           </div>
         </div>
-        <aside class="identity-card" aria-label="Identity overview" data-i18n-attr="aria-label:identityAria">
-          <dl>
-            <div class="identity-row">
-              <dt data-i18n="identityCurrentLabel">Current</dt>
-              <dd data-i18n="identityCurrentValue">Tencent Cloud · AI Backend Engineer</dd>
+        <div class="hero-side">
+          <figure class="portrait-card" aria-label="Portrait illustration" data-i18n-attr="aria-label:portraitAria">
+            <div class="portrait-frame">
+              <img
+                src="assets/avatar-krislliu-illustration.svg"
+                alt="Stylized portrait illustration of Krislliu"
+                data-i18n-attr="alt:portraitAlt"
+                loading="eager"
+                decoding="async"
+              />
             </div>
-            <div class="identity-row">
-              <dt data-i18n="identityBaseLabel">Base</dt>
-              <dd data-i18n="identityBaseValue">Xi'an, Shaanxi</dd>
-            </div>
-            <div class="identity-row">
-              <dt data-i18n="identityFocusLabel">Focus</dt>
-              <dd data-i18n="identityFocusValue">LLM + RAG, Multi-Agent workflow, API systems</dd>
-            </div>
-            <div class="identity-row">
-              <dt data-i18n="identityLanguagesLabel">Languages</dt>
-              <dd data-i18n="identityLanguagesValue">Mandarin, Cantonese, English</dd>
-            </div>
-            <div class="identity-row">
-              <dt data-i18n="identityReachLabel">Reach</dt>
-              <dd data-i18n="identityReachValue">github.com/apocalypseyun</dd>
-            </div>
-          </dl>
-        </aside>
+            <figcaption class="portrait-caption" data-i18n="portraitCaption">Representational illustration generated from reference photo.</figcaption>
+          </figure>
+          <aside class="identity-card" aria-label="Identity overview" data-i18n-attr="aria-label:identityAria">
+            <dl>
+              <div class="identity-row">
+                <dt data-i18n="identityCurrentLabel">Current</dt>
+                <dd data-i18n="identityCurrentValue">Tencent Cloud · AI Backend Engineer</dd>
+              </div>
+              <div class="identity-row">
+                <dt data-i18n="identityBaseLabel">Base</dt>
+                <dd data-i18n="identityBaseValue">Xi'an, Shaanxi</dd>
+              </div>
+              <div class="identity-row">
+                <dt data-i18n="identityFocusLabel">Focus</dt>
+                <dd data-i18n="identityFocusValue">LLM + RAG, Multi-Agent workflow, API systems</dd>
+              </div>
+              <div class="identity-row">
+                <dt data-i18n="identityLanguagesLabel">Languages</dt>
+                <dd data-i18n="identityLanguagesValue">Mandarin, Cantonese, English</dd>
+              </div>
+              <div class="identity-row">
+                <dt data-i18n="identityReachLabel">Reach</dt>
+                <dd data-i18n="identityReachValue">github.com/apocalypseyun</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -852,6 +910,9 @@
         pageTitle: 'Krislliu | AI Backend Engineer',
         navAria: 'Primary',
         langSwitchAria: 'Language switcher',
+        portraitAria: 'Portrait illustration',
+        portraitAlt: 'Stylized portrait illustration of Krislliu',
+        portraitCaption: 'Representational illustration generated from reference photo.',
         identityAria: 'Identity overview',
         brandRole: 'AI Backend Engineer',
         navAbout: 'About',
@@ -964,6 +1025,9 @@
         pageTitle: 'Krislliu | AI 后端工程师',
         navAria: '主导航',
         langSwitchAria: '语言切换',
+        portraitAria: '人物插画',
+        portraitAlt: 'Krislliu 的风格化人物插画',
+        portraitCaption: '基于参考照片生成的非真人插画形象。',
         identityAria: '身份概览',
         brandRole: 'AI 后端工程师',
         navAbout: '关于我',
