@@ -534,59 +534,6 @@
       color: inherit;
     }
 
-    .tweaks {
-      position: fixed;
-      inset-inline-end: 1rem;
-      inset-block-end: 1rem;
-      z-index: 30;
-      inline-size: min(18rem, calc(100% - 2rem));
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: color-mix(in oklch, var(--surface) 86%, var(--bg));
-      padding: 0.85rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .tweaks h2 {
-      margin: 0;
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .tweak-grid {
-      margin-top: 0.65rem;
-      display: grid;
-      gap: 0.6rem;
-    }
-
-    .tweak-grid label {
-      display: grid;
-      gap: 0.35rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-    }
-
-    .tweak-grid select,
-    .tweak-grid input {
-      appearance: none;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--surface);
-      color: var(--fg);
-      padding: 0.48rem 0.56rem;
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-    }
-
-    .tweak-grid input[type="range"] {
-      padding: 0;
-      accent-color: var(--fg);
-    }
-
     @media (max-width: 1050px) {
       .hero-grid,
       .focus-grid,
@@ -641,21 +588,6 @@
       .timeline-item {
         padding-inline-start: 1.05rem;
       }
-
-      .tweaks {
-        inset-inline: 1rem;
-      }
-    }
-
-    body[data-density='compact'] {
-      --density: 0.82;
-    }
-
-    body[data-contrast='soft'] {
-      --bg: oklch(98.2% 0.005 240);
-      --surface: oklch(99.4% 0.004 240);
-      --border: oklch(89.8% 0.008 250);
-      --muted: oklch(50% 0.012 250);
     }
   </style>
 </head>
@@ -882,8 +814,8 @@
         </article>
         <article class="entry-link">
           <span data-i18n="entry4Tag">Direct</span>
-          <h3 data-i18n="entry4Title">Phone</h3>
-          <p data-i18n="entry4Desc">+86 188 1137 8369</p>
+          <h3 data-i18n="entry4Title">Telegram</h3>
+          <p data-i18n="entry4Desc">@ApocalypseYun</p>
         </article>
       </div>
     </section>
@@ -900,7 +832,7 @@
         <div class="contact-direct">
           <strong data-i18n="contactDirectTitle">Direct channels</strong>
           <span data-i18n="contactDirectEmail">Email: liugz97@gmail.com</span>
-          <span data-i18n="contactDirectPhone">Phone: +86 188 1137 8369</span>
+          <span data-i18n="contactDirectTelegram">Telegram: @ApocalypseYun</span>
           <span data-i18n="contactDirectGithub">GitHub: github.com/apocalypseyun</span>
         </div>
       </div>
@@ -914,54 +846,13 @@
     </div>
   </footer>
 
-  <aside class="tweaks" aria-label="Design tweaks" data-i18n-attr="aria-label:tweaksAria">
-    <h2 data-i18n="tweaksTitle">Tweaks</h2>
-    <div class="tweak-grid">
-      <label>
-        <span data-i18n="tweakAccentLabel">Accent</span>
-        <select id="accentMode">
-          <option value="cobalt" data-i18n="accentCobalt">Cobalt</option>
-          <option value="moss" data-i18n="accentMoss">Moss Green</option>
-          <option value="rust" data-i18n="accentRust">Rust</option>
-        </select>
-      </label>
-      <label>
-        <span data-i18n="tweakTypeScaleLabel">Type scale</span>
-        <input id="typeScale" type="range" min="0.95" max="1.08" value="1" step="0.01" />
-      </label>
-      <label>
-        <span data-i18n="tweakDensityLabel">Density</span>
-        <select id="densityMode">
-          <option value="comfortable" data-i18n="densityComfortable">Comfortable</option>
-          <option value="compact" data-i18n="densityCompact">Compact</option>
-        </select>
-      </label>
-      <label>
-        <span data-i18n="tweakContrastLabel">Contrast</span>
-        <select id="contrastMode">
-          <option value="default" data-i18n="contrastDefault">Default</option>
-          <option value="soft" data-i18n="contrastSoft">Soft</option>
-        </select>
-      </label>
-    </div>
-  </aside>
-
   <script>
-    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-      "accentMode": "cobalt",
-      "typeScale": 1,
-      "densityMode": "comfortable",
-      "contrastMode": "default",
-      "language": "en"
-    }/*EDITMODE-END*/;
-
     const I18N = {
       en: {
         pageTitle: 'Krislliu | AI Backend Engineer',
         navAria: 'Primary',
         langSwitchAria: 'Language switcher',
         identityAria: 'Identity overview',
-        tweaksAria: 'Design tweaks',
         brandRole: 'AI Backend Engineer',
         navAbout: 'About',
         navWork: 'Work',
@@ -1058,35 +949,22 @@
         entry3Title: 'Email',
         entry3Desc: 'liugz97@gmail.com',
         entry4Tag: 'Direct',
-        entry4Title: 'Phone',
-        entry4Desc: '+86 188 1137 8369',
+        entry4Title: 'Telegram',
+        entry4Desc: '@ApocalypseYun',
         contactTitle: 'Building AI products that balance model quality and production constraints.',
         contactDesc: 'If you are working on enterprise AI infrastructure, developer tooling, or multilingual systems, I am open to discussing product collaboration, platform engineering, and applied research.',
         contactDirectTitle: 'Direct channels',
         contactDirectEmail: 'Email: liugz97@gmail.com',
-        contactDirectPhone: 'Phone: +86 188 1137 8369',
+        contactDirectTelegram: 'Telegram: @ApocalypseYun',
         contactDirectGithub: 'GitHub: github.com/apocalypseyun',
         footerCopyright: '©',
-        footerTagline: "Built as a personal brand entry point · Xi'an, China",
-        tweaksTitle: 'Tweaks',
-        tweakAccentLabel: 'Accent',
-        accentCobalt: 'Cobalt',
-        accentMoss: 'Moss Green',
-        accentRust: 'Rust',
-        tweakTypeScaleLabel: 'Type scale',
-        tweakDensityLabel: 'Density',
-        densityComfortable: 'Comfortable',
-        densityCompact: 'Compact',
-        tweakContrastLabel: 'Contrast',
-        contrastDefault: 'Default',
-        contrastSoft: 'Soft'
+        footerTagline: "Built as a personal brand entry point · Xi'an, China"
       },
       zh: {
         pageTitle: 'Krislliu | AI 后端工程师',
         navAria: '主导航',
         langSwitchAria: '语言切换',
         identityAria: '身份概览',
-        tweaksAria: '样式调节',
         brandRole: 'AI 后端工程师',
         navAbout: '关于我',
         navWork: '项目',
@@ -1183,81 +1061,26 @@
         entry3Title: '邮箱',
         entry3Desc: 'liugz97@gmail.com',
         entry4Tag: '直连',
-        entry4Title: '电话',
-        entry4Desc: '+86 188 1137 8369',
+        entry4Title: 'Telegram',
+        entry4Desc: '@ApocalypseYun',
         contactTitle: '构建兼顾模型质量与生产约束的 AI 产品。',
         contactDesc: '如果你正在做企业级 AI 基础设施、开发者工具或多语言系统，欢迎交流产品合作、平台工程与应用研究。',
         contactDirectTitle: '直接联系渠道',
         contactDirectEmail: '邮箱：liugz97@gmail.com',
-        contactDirectPhone: '电话：+86 188 1137 8369',
+        contactDirectTelegram: 'Telegram：@ApocalypseYun',
         contactDirectGithub: 'GitHub：github.com/apocalypseyun',
         footerCopyright: '©',
-        footerTagline: '作为个人品牌入口构建 · 中国西安',
-        tweaksTitle: '样式调节',
-        tweakAccentLabel: '强调色',
-        accentCobalt: '钴蓝',
-        accentMoss: '苔绿',
-        accentRust: '锈橙',
-        tweakTypeScaleLabel: '字号比例',
-        tweakDensityLabel: '信息密度',
-        densityComfortable: '舒适',
-        densityCompact: '紧凑',
-        tweakContrastLabel: '对比度',
-        contrastDefault: '默认',
-        contrastSoft: '柔和'
+        footerTagline: '作为个人品牌入口构建 · 中国西安'
       }
     };
 
-    const tweakKeys = Object.keys(TWEAK_DEFAULTS);
+    const STORAGE_KEY = 'personal-site-language';
     const supportedLanguages = ['en', 'zh'];
-    const supportedAccentModes = ['cobalt', 'moss', 'rust'];
-    const supportedDensityModes = ['comfortable', 'compact'];
-    const supportedContrastModes = ['default', 'soft'];
-    let persistedTweaks = {};
-    try {
-      persistedTweaks = JSON.parse(localStorage.getItem('personal-site-tweaks') || '{}') || {};
-    } catch (error) {
-      persistedTweaks = {};
-    }
-    const state = { ...TWEAK_DEFAULTS, ...persistedTweaks };
-    if (!Object.prototype.hasOwnProperty.call(persistedTweaks, 'language')) {
-      state.language = (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
-    }
-    state.typeScale = Number(state.typeScale);
-    if (!Number.isFinite(state.typeScale)) {
-      state.typeScale = TWEAK_DEFAULTS.typeScale;
-    }
-    state.typeScale = Math.min(1.08, Math.max(0.95, state.typeScale));
-    if (!supportedLanguages.includes(state.language)) {
-      state.language = TWEAK_DEFAULTS.language;
-    }
-    if (!supportedAccentModes.includes(state.accentMode)) {
-      state.accentMode = TWEAK_DEFAULTS.accentMode;
-    }
-    if (!supportedDensityModes.includes(state.densityMode)) {
-      state.densityMode = TWEAK_DEFAULTS.densityMode;
-    }
-    if (!supportedContrastModes.includes(state.contrastMode)) {
-      state.contrastMode = TWEAK_DEFAULTS.contrastMode;
-    }
-
-    const accents = {
-      cobalt: 'oklch(58% 0.18 255)',
-      moss: 'oklch(62% 0.13 150)',
-      rust: 'oklch(60% 0.16 30)'
-    };
-
-    const controls = {
-      accentMode: document.getElementById('accentMode'),
-      typeScale: document.getElementById('typeScale'),
-      densityMode: document.getElementById('densityMode'),
-      contrastMode: document.getElementById('contrastMode')
-    };
     const languageButtons = Array.from(document.querySelectorAll('[data-lang-btn]'));
 
-    function persistState() {
+    function persistLanguage(language) {
       try {
-        localStorage.setItem('personal-site-tweaks', JSON.stringify(state));
+        localStorage.setItem(STORAGE_KEY, language);
       } catch (error) {
         return;
       }
@@ -1266,7 +1089,6 @@
     function applyLanguage(language) {
       const nextLanguage = supportedLanguages.includes(language) ? language : 'en';
       const dictionary = I18N[nextLanguage];
-      state.language = nextLanguage;
       document.documentElement.lang = nextLanguage === 'zh' ? 'zh-CN' : 'en';
       document.title = dictionary.pageTitle;
 
@@ -1295,40 +1117,27 @@
       });
     }
 
-    function applyTweaks() {
-      const root = document.documentElement;
-      root.style.setProperty('--accent', accents[state.accentMode]);
-      root.style.setProperty('--type-scale', String(state.typeScale));
-      document.body.dataset.density = state.densityMode === 'compact' ? 'compact' : 'comfortable';
-      document.body.dataset.contrast = state.contrastMode === 'soft' ? 'soft' : 'default';
-      persistState();
-    }
-
-    tweakKeys.forEach((key) => {
-      if (!controls[key]) {
-        return;
+    function getInitialLanguage() {
+      try {
+        const storedLanguage = localStorage.getItem(STORAGE_KEY);
+        if (storedLanguage && supportedLanguages.includes(storedLanguage)) {
+          return storedLanguage;
+        }
+      } catch (error) {
       }
-      controls[key].value = String(state[key]);
-      controls[key].addEventListener('input', (event) => {
-        state[key] = key === 'typeScale' ? Number(event.target.value) : event.target.value;
-        applyTweaks();
-      });
-      controls[key].addEventListener('change', (event) => {
-        state[key] = key === 'typeScale' ? Number(event.target.value) : event.target.value;
-        applyTweaks();
-      });
-    });
+      return (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+    }
 
     languageButtons.forEach((button) => {
       button.addEventListener('click', () => {
-        applyLanguage(button.dataset.langBtn);
-        persistState();
+        const nextLanguage = button.dataset.langBtn || 'en';
+        applyLanguage(nextLanguage);
+        persistLanguage(nextLanguage);
       });
     });
 
     document.getElementById('year').textContent = String(new Date().getFullYear());
-    applyTweaks();
-    applyLanguage(state.language);
+    applyLanguage(getInitialLanguage());
   </script>
 </body>
 </html>
