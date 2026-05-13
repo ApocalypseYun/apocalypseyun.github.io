@@ -1,427 +1,1334 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable"  content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no">
-    
-    
-    <!--Simple SEO-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krislliu | AI Backend Engineer</title>
+  <style>
+    :root {
+      --bg: oklch(99% 0.002 240);
+      --surface: oklch(100% 0 0);
+      --fg: oklch(18% 0.012 250);
+      --muted: oklch(54% 0.012 250);
+      --border: oklch(92% 0.005 250);
+      --accent: oklch(58% 0.18 255);
 
+      --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+      --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 
-<meta name="robots" content=all />
-<meta name="google" content=all />
-<meta name="googlebot" content=all />
-<meta name="verify" content=all />
-    <!--Title-->
-
-<title>ApocalypseYun Blog</title>
-
-<link rel="alternate" href="/atom.xml" title="ApocalypseYun Blog" type="application/atom+xml">
-
-
-<link rel="icon" href="/favicon.ico">
-
-    
-<link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/pages/article-exp.css">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
-    <!--script-->
-
-
-
-<script src="http://cdn1.lncld.net/static/js/2.1.0/av-min.js"></script>
-<script>
-    var appId = "Aitp7nydzRE0M8Qn1oHEof6J-gzGzoHsz";
-    var appKey = "DVGNmizdQfHW5Ljra8PEnaBy";
-    var region = 'null';
-    AV.init({
-        appId: appId,
-        appKey: appKey,
-        region: region
-    });
-</script>
-
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-    
-    
-</head>
-
-<body>
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<style>
-    header{ top: 71px; position: absolute!important;}
-    #container{padding-top: 151px!important;}
-</style>
-<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
-
-<div id="wrap">
-    <header >
-    <div id="site-meta">
-        <a href="/" id="logo">
-            <h1 class="title">ApocalypseYun Blog</h1>
-        </a>
-        
-    </div>
-    <ul id="nav">
-        
-            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
-        
-            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
-        
-        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>搜索</a></li>
-    </ul>
-</header>
-
-    <div id="container">
-        
-<ul id="sidebar">
-    
-    
-<li class="widget notification">
-    <i class="fa fa-bell-o"></i>
-    <div>
-        
-<p>主题ylion v0.0.0版本即将上线，敬请期待~！
-主题作者：<a href="https://github.com/GeekaholicLin"
-title="fork me" target="_blank">Geekaholic</a></p>
-    </div>
-</li>
-
-    
-    
-<li class="widget widget-normal category">
-    <h3 class="fa fa-th widget-title">分类</h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/test/"><i class="fa" aria-hidden="true">test</i></a><span class="category-list-count">1</span></li></ul>
-</li>
-
-
-    
-    
-<li class="widget widget-normal archive">
-  <h3 class="fa fa-archive widget-title">归档</h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">三月 2017</i></a><span class="archive-list-count">3</span></li></ul>
-</li>
-
-
-    
-    
-<li class="widget widget-normal popular-posts" id="popular-posts">
-    <h3 class="fa fa-thermometer-3 widget-title">热门文章</h3>
-    <ul id="popular-content">
-        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
-    </ul>
-</li>
-
-    
-    
-<li class="widget widget-normal tags">
-  <h3 class="fa fa-tags widget-title">标签云</h3>
-  <div class="tagcloud-content">
-    
-      <a href="/tags/test/" style="font-size: 0.14rem; color: #69c">test</a>
-  </div>
-</li>
-
-    
-    
-<li class="widget widget-normal friends-link">
-    <h3 class="fa fa-globe widget-title">友链</h3><br/>
-
-    
-        <a href="http://geekaholiclin.github.io" class="fa" target="_blank">主题作者</a>
-
-    
-
-</li>
-
-    
-</ul>
-
-
-        <ul id="main">
-    
-
-    
-    
-    
-    
-    
-    
-    
-    <li  class="article-excerpt-wrap " _href = "/2017/03/09/老哥/">
-        <div class="article-img img-ajax" data-src= http://XXXX.example.jpg>
-           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
-        </div>
-        <div class="article-excerpt">
-            
-            <a class="article-title-link" href="/2017/03/09/老哥/">
-                <h2 class="article-title">老哥</h2>
-            </a>
-            
-            <p class="article-content">
-                网络开拓者协会最稳的司机
-
-            </p>
-            <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>null</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-         <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-            null
-            
-        </span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2017/03/09</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="老哥"
-              data-leadcloud-url="/2017/03/09/老哥/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-    <a href="/2017/03/09/老哥/" class="read-article">阅读全文</a>
-    
-</div>
-
-        </div>
-        
-    </li>
-    
-    
-    <li  class="article-excerpt-wrap " _href = "/2017/03/09/第一篇文章/">
-        <div class="article-img img-ajax" data-src= http://XXXX.example.jpg>
-           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
-        </div>
-        <div class="article-excerpt">
-            
-            <a class="article-title-link" href="/2017/03/09/第一篇文章/">
-                <h2 class="article-title">第一篇文章</h2>
-            </a>
-            
-            <p class="article-content">
-                第一篇文章测试
-引用
-
-code
-
-            </p>
-            <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>test</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-         <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-            test
-            
-        </span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2017/03/09</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="第一篇文章"
-              data-leadcloud-url="/2017/03/09/第一篇文章/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-    <a href="/2017/03/09/第一篇文章/" class="read-article">阅读全文</a>
-    
-</div>
-
-        </div>
-        
-    </li>
-    
-    
-    <li  class="article-excerpt-wrap " _href = "/2017/03/09/hello-world/">
-        <div class="article-img img-ajax" data-src= /img/default-1.jpg>
-           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
-        </div>
-        <div class="article-excerpt">
-            
-            <a class="article-title-link" href="/2017/03/09/hello-world/">
-                <h2 class="article-title">Hello World</h2>
-            </a>
-            
-            <p class="article-content">
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to remote sites1$ h...
-            </p>
-            <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>null</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-         <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-            null
-            
-        </span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2017/03/09</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="Hello World"
-              data-leadcloud-url="/2017/03/09/hello-world/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-    <a href="/2017/03/09/hello-world/" class="read-article">阅读全文</a>
-    
-</div>
-
-        </div>
-        
-    </li>
-    
-    
-
-</ul>
-
-
-    </div>
-    <footer id="footer">
-    
-    <div class="social">
-        
-        <a href="https://github.com/ApocalypseYun" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
-        
-        <a href="https://github.com/ApocalypseYun" class="fa fa-github" target="_blank" title="Follow me~"></a>
-        
-    </div>
-    
-    <div>
-        
-        <a href="/" class="copyright-links">ApocalypseYun</a>&copy;2017 - 2017.All Rights
-        Reserved.
-    </div>
-    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
-                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
-    </p>
-    
-    
-    <p>
-        <span id="busuanzi_container_site_uv" class="fa fa-bar-chart">
-        欢迎第<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>位小伙伴~
-        </span>
-    </p>
-    
-</footer>
-
-</div>
-    <ul id="tools">
-    <li class="totop-btn fa fa-angle-up"></li>
-    
-    
-
-    
-</ul>
-<p id="process"></p>
-<div id="search-overlay">
-    <div class="search-area-wrap">
-        <div id="search-area">
-            <div class="input-wrap focus">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <input id="search-input" autofocus autocomplete="off" type="text"
-                       placeholder="search this website..."/>
-            </div>
-            <ul id="search-result">
-                <li class="load-first"><i class="fa fa-spinner fa-spin"></i></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
-    <script src="/js/highsong.js"></script>
-
-
-
-<script src="/js/search.js"></script>
-<script type="text/javascript">
-    //theme config datas
-    var copyrightObj = {};
-    copyrightObj.enable = 'true';
-    copyrightObj.triggerCopyLength = '200';
-    copyrightObj.appendText = '商业转载请联系作者获得授权,非商业转载请注明出处 © example';
-    var leancloudObj = {};
-    leancloudObj.enable = 'true';
-    leancloudObj.className = 'Couter';
-    leancloudObj.limits = '10';
-</script>
-<script type="text/javascript">
-    var search = {};
-    var search_path = "search.xml";
-    if (!search_path) {
-        search_path = "search.xml";
+      --page-max: 1120px;
+      --content-max: 68ch;
+      --radius: 14px;
+      --space-xs: 0.5rem;
+      --space-sm: 0.875rem;
+      --space-md: 1.25rem;
+      --space-lg: 2rem;
+      --space-xl: 3.5rem;
+      --space-2xl: 6rem;
+      --type-scale: 1;
+      --density: 1;
+      --shadow-soft: 0 1px 1px color-mix(in oklch, var(--fg) 3%, transparent),
+        0 16px 24px color-mix(in oklch, var(--fg) 4%, transparent);
     }
-    search.path = "/" + search_path;
-    search.func =  _ajax.init();
-</script>
-<script src="/js/app.js"></script>
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      line-height: 1.58;
+      font-size: calc(16px * var(--type-scale));
+      text-wrap: pretty;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 12% 0%, color-mix(in oklch, var(--fg) 4%, transparent), transparent 36%),
+        radial-gradient(circle at 88% 20%, color-mix(in oklch, var(--fg) 3%, transparent), transparent 30%);
+      opacity: 0.65;
+      z-index: -1;
+    }
+
+    .site-header {
+      position: sticky;
+      inset-block-start: 0;
+      z-index: 20;
+      backdrop-filter: blur(8px);
+      background: color-mix(in oklch, var(--bg) 88%, white 12%);
+      border-block-end: 1px solid var(--border);
+    }
+
+    .header-inner,
+    .section,
+    .footer-inner {
+      inline-size: min(calc(100% - 2.5rem), var(--page-max));
+      margin-inline: auto;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-block-size: 4.25rem;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-weight: 620;
+      letter-spacing: -0.02em;
+      font-size: calc(1.08rem * var(--type-scale));
+      text-decoration: none;
+      color: var(--fg);
+    }
+
+    .brand small {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-inline-start: auto;
+    }
+
+    .top-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      font-weight: 560;
+      transition: color 180ms ease;
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus-visible {
+      color: var(--accent);
+      outline: none;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.16rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 999px;
+      min-inline-size: 2.35rem;
+      min-block-size: 1.95rem;
+      padding-inline: 0.65rem;
+      font-size: 0.73rem;
+      font-family: var(--font-mono);
+      font-weight: 550;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 160ms ease, color 160ms ease;
+    }
+
+    .lang-btn[aria-pressed='true'] {
+      color: var(--surface);
+      background: var(--fg);
+    }
+
+    .lang-btn:focus-visible {
+      outline: 2px solid color-mix(in oklch, var(--accent) 45%, var(--border));
+      outline-offset: 1px;
+    }
+
+    main {
+      padding-block: var(--space-2xl);
+      display: grid;
+      gap: calc(var(--space-2xl) * var(--density));
+    }
+
+    .section {
+      border-block-start: 1px solid var(--border);
+      padding-block-start: calc(var(--space-lg) * var(--density));
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-block-end: 0.9rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.6vw, 2.05rem);
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+      max-inline-size: 24ch;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      align-items: start;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.7rem, 5vw, 4.35rem);
+      line-height: 1.06;
+      letter-spacing: -0.028em;
+      margin: 0;
+      max-inline-size: 16ch;
+    }
+
+    .hero-deck {
+      margin-top: 1.25rem;
+      max-inline-size: var(--content-max);
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.65vw, 1.24rem);
+      line-height: 1.52;
+    }
+
+    .hero-actions {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-block-size: 2.85rem;
+      padding-inline: 1.1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 580;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .button {
+      background: var(--fg);
+      color: var(--surface);
+    }
+
+    .button-secondary {
+      background: var(--surface);
+      color: var(--fg);
+      border-color: var(--border);
+    }
+
+    .button:is(a, button):hover,
+    .button-secondary:is(a, button):hover,
+    .button:is(a, button):focus-visible,
+    .button-secondary:is(a, button):focus-visible {
+      transform: translateY(-1px);
+      border-color: color-mix(in oklch, var(--accent) 25%, var(--border));
+      outline: none;
+    }
+
+    .identity-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .identity-row {
+      display: grid;
+      grid-template-columns: minmax(6rem, 8.5rem) 1fr;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding-block: 0.52rem;
+      border-block-end: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    .identity-row:last-child {
+      border: none;
+      padding-block-end: 0;
+    }
+
+    .identity-row dt {
+      margin: 0;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .identity-row dd {
+      margin: 0;
+      font-weight: 520;
+      color: var(--fg);
+      overflow-wrap: anywhere;
+    }
+
+    .focus-grid,
+    .work-grid,
+    .link-grid,
+    .skill-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .focus-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .focus-item,
+    .work-card,
+    .entry-link,
+    .skill-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 1rem 1rem 1.15rem;
+    }
+
+    .focus-item h3,
+    .work-card h3,
+    .skill-card h3 {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      font-family: var(--font-display);
+    }
+
+    .focus-item p,
+    .work-card p,
+    .skill-card p,
+    .entry-link p {
+      margin: 0.55rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.56;
+    }
+
+    .work-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .work-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .timeline {
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 0.75rem 1rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0.95rem 0 0.95rem 1.3rem;
+      border-block-end: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      padding-block-end: 0.2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      inset-inline-start: 0.3rem;
+      inset-block-start: 1.3rem;
+      inline-size: 0.5rem;
+      block-size: 0.5rem;
+      border-radius: 999px;
+      background: color-mix(in oklch, var(--fg) 62%, var(--surface));
+    }
+
+    .timeline-role {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .timeline-meta {
+      margin-top: 0.24rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .timeline-detail {
+      margin: 0.55rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-inline-size: var(--content-max);
+    }
+
+    .skill-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skill-list {
+      margin: 0.65rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-list li {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.56rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.74rem;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+
+    .link-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .entry-link {
+      color: inherit;
+    }
+
+    .entry-link span {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .entry-link h3 {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+      font-family: var(--font-display);
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1.2fr auto;
+      gap: 1.2rem;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 1.2rem;
+    }
+
+    .contact h2 {
+      margin: 0;
+      font-size: clamp(1.3rem, 2.1vw, 1.85rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-family: var(--font-display);
+    }
+
+    .contact p {
+      margin: 0.5rem 0 0;
+      color: var(--muted);
+      max-inline-size: 56ch;
+    }
+
+    .contact .button {
+      white-space: nowrap;
+    }
+
+    .contact-direct {
+      display: grid;
+      gap: 0.4rem;
+      justify-items: end;
+      text-align: end;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .contact-direct strong {
+      color: var(--fg);
+      font-weight: 560;
+      letter-spacing: 0.02em;
+    }
+
+    .footer {
+      border-block-start: 1px solid var(--border);
+      margin-top: var(--space-xl);
+      padding-block: 1.5rem 2rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+    }
+
+    .footer a {
+      color: inherit;
+    }
+
+    .tweaks {
+      position: fixed;
+      inset-inline-end: 1rem;
+      inset-block-end: 1rem;
+      z-index: 30;
+      inline-size: min(18rem, calc(100% - 2rem));
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: color-mix(in oklch, var(--surface) 86%, var(--bg));
+      padding: 0.85rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .tweaks h2 {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .tweak-grid {
+      margin-top: 0.65rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .tweak-grid label {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .tweak-grid select,
+    .tweak-grid input {
+      appearance: none;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface);
+      color: var(--fg);
+      padding: 0.48rem 0.56rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+    }
+
+    .tweak-grid input[type="range"] {
+      padding: 0;
+      accent-color: var(--fg);
+    }
+
+    @media (max-width: 1050px) {
+      .hero-grid,
+      .focus-grid,
+      .work-grid,
+      .skill-grid,
+      .link-grid,
+      .contact {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid > :first-child,
+      .contact > :first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        min-block-size: 4.8rem;
+        flex-wrap: wrap;
+        padding-block: 0.65rem;
+      }
+
+      .top-nav {
+        gap: 0.7rem;
+        justify-content: flex-start;
+      }
+
+      .header-controls {
+        inline-size: 100%;
+        justify-content: space-between;
+      }
+
+      .hero-grid,
+      .focus-grid,
+      .work-grid,
+      .skill-grid,
+      .link-grid,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-direct {
+        justify-items: start;
+        text-align: start;
+      }
+
+      main {
+        padding-block: 3.8rem;
+      }
+
+      .timeline-item {
+        padding-inline-start: 1.05rem;
+      }
+
+      .tweaks {
+        inset-inline: 1rem;
+      }
+    }
+
+    body[data-density='compact'] {
+      --density: 0.82;
+    }
+
+    body[data-contrast='soft'] {
+      --bg: oklch(98.2% 0.005 240);
+      --surface: oklch(99.4% 0.004 240);
+      --border: oklch(89.8% 0.008 250);
+      --muted: oklch(50% 0.012 250);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        Krislliu
+        <small data-i18n="brandRole">AI Backend Engineer</small>
+      </a>
+      <div class="header-controls">
+        <nav class="top-nav" aria-label="Primary" data-i18n-attr="aria-label:navAria">
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#work" data-i18n="navWork">Work</a>
+          <a href="#experience" data-i18n="navExperience">Experience</a>
+          <a href="#capabilities" data-i18n="navCapabilities">Capabilities</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Language switcher" data-i18n-attr="aria-label:langSwitchAria">
+          <button class="lang-btn" type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="about" class="section">
+      <span class="section-kicker" data-i18n="sectionProfile">Profile</span>
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-title" data-i18n="heroTitle">Building enterprise AI products from model capability to production reliability.</h1>
+          <p class="hero-deck" data-i18n="heroDeck">
+            I am Krislliu, an AI backend engineer currently working on Tencent Cloud ADP, CodeBuddy, and WorkBuddy.
+            I focus on LLM infrastructure, prompt systems, usage billing, and resilient API services that survive real customer traffic.
+          </p>
+          <div class="hero-actions">
+            <span class="button" data-i18n="heroPrimaryContact">Email: liugz97@gmail.com</span>
+            <span class="button-secondary" data-i18n="heroGithub">GitHub: github.com/apocalypseyun</span>
+          </div>
+        </div>
+        <aside class="identity-card" aria-label="Identity overview" data-i18n-attr="aria-label:identityAria">
+          <dl>
+            <div class="identity-row">
+              <dt data-i18n="identityCurrentLabel">Current</dt>
+              <dd data-i18n="identityCurrentValue">Tencent Cloud · AI Backend Engineer</dd>
+            </div>
+            <div class="identity-row">
+              <dt data-i18n="identityBaseLabel">Base</dt>
+              <dd data-i18n="identityBaseValue">Xi'an, Shaanxi</dd>
+            </div>
+            <div class="identity-row">
+              <dt data-i18n="identityFocusLabel">Focus</dt>
+              <dd data-i18n="identityFocusValue">LLM + RAG, Multi-Agent workflow, API systems</dd>
+            </div>
+            <div class="identity-row">
+              <dt data-i18n="identityLanguagesLabel">Languages</dt>
+              <dd data-i18n="identityLanguagesValue">Mandarin, Cantonese, English</dd>
+            </div>
+            <div class="identity-row">
+              <dt data-i18n="identityReachLabel">Reach</dt>
+              <dd data-i18n="identityReachValue">github.com/apocalypseyun</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="focus-title">
+      <span class="section-kicker" data-i18n="sectionCurrentFocus">Current focus</span>
+      <h2 id="focus-title" data-i18n="focusTitle">What I am working on now</h2>
+      <div class="focus-grid">
+        <article class="focus-item">
+          <h3 data-i18n="focusItem1Title">Agent platform architecture</h3>
+          <p data-i18n="focusItem1Desc">
+            Designing core platform features for ADP, including workflow orchestration, model invocation scheduling,
+            and quota-safe enterprise execution paths.
+          </p>
+        </article>
+        <article class="focus-item">
+          <h3 data-i18n="focusItem2Title">Usage and billing integrity</h3>
+          <p data-i18n="focusItem2Desc">
+            Building usage metering, cost attribution, and enterprise-facing usage query flows for CodeBuddy and WorkBuddy open platform products.
+          </p>
+        </article>
+        <article class="focus-item">
+          <h3 data-i18n="focusItem3Title">Prompt and response quality loops</h3>
+          <p data-i18n="focusItem3Desc">
+            Shipping prompt optimization capabilities that improve generation consistency while preserving throughput under production constraints.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" class="section" aria-labelledby="work-title">
+      <span class="section-kicker" data-i18n="sectionSelectedWork">Selected work</span>
+      <h2 id="work-title" data-i18n="workTitle">Projects with concrete shipping scope</h2>
+      <div class="work-grid">
+        <article class="work-card">
+          <p class="work-meta"><span data-i18n="work1Tag">ADP</span><span data-i18n="work1Date">2025.10 - Present</span></p>
+          <h3 data-i18n="work1Title">Tencent Cloud Agent Development Platform</h3>
+          <p data-i18n="work1Desc">
+            Led independent site development, built blog and ad system modules, and fixed production SEO issues including sitemap and robot directives.
+            Also shipped rate limiting, model dispatch, and billing capabilities for enterprise stability.
+          </p>
+        </article>
+        <article class="work-card">
+          <p class="work-meta"><span data-i18n="work2Tag">CodeBuddy &amp; WorkBuddy</span><span data-i18n="work2Date">2025.10 - Present</span></p>
+          <h3 data-i18n="work2Title">Open platform usage systems</h3>
+          <p data-i18n="work2Desc">
+            Implemented usage billing and quota management, resolved pagination issues affecting key enterprise clients,
+            and delivered real-time API services with around 200ms response behavior for engineering knowledge workflows.
+          </p>
+        </article>
+        <article class="work-card">
+          <p class="work-meta"><span data-i18n="work3Tag">Multilingual MT</span><span data-i18n="work3Date">2024.01 - 2025.03</span></p>
+          <h3 data-i18n="work3Title">Real-time translation with MOE + wait-k</h3>
+          <p data-i18n="work3Desc">
+            Trained multilingual translation models with Fairseq, integrated ASR-facing interfaces,
+            and improved low-resource Cantonese data coverage through augmentation and terminology-aware generation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section" aria-labelledby="exp-title">
+      <span class="section-kicker" data-i18n="sectionExperience">Experience</span>
+      <h2 id="exp-title" data-i18n="experienceTitle">Career timeline</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <h3 class="timeline-role" data-i18n="timeline1Role">Tencent Cloud · AI Backend Engineer</h3>
+          <p class="timeline-meta" data-i18n="timeline1Meta">Oct 2025 - Present · Xi'an, China</p>
+          <p class="timeline-detail" data-i18n="timeline1Desc">
+            Backend development for AI Development Platform and intelligent assistant products,
+            with Python/Go microservices running on Docker and Kubernetes.
+          </p>
+        </article>
+        <article class="timeline-item">
+          <h3 class="timeline-role" data-i18n="timeline2Role">The Hong Kong Polytechnic University · Research Associate</h3>
+          <p class="timeline-meta" data-i18n="timeline2Meta">Jan 2024 - Oct 2025 · Hong Kong, China</p>
+          <p class="timeline-detail" data-i18n="timeline2Desc">
+            Researched multilingual translation systems and contributed to assistive smart-glasses projects for visually impaired users.
+          </p>
+        </article>
+        <article class="timeline-item">
+          <h3 class="timeline-role" data-i18n="timeline3Role">Huawei · Software Engineer</h3>
+          <p class="timeline-meta" data-i18n="timeline3Meta">Apr 2020 - Aug 2021 · Xi'an, China</p>
+          <p class="timeline-detail" data-i18n="timeline3Desc">
+            Developed cloud-container logging and alerting flows with Go, Fluentd, Elasticsearch, and Kubernetes deployment workflows.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section" aria-labelledby="skills-title">
+      <span class="section-kicker" data-i18n="sectionCapabilities">Capabilities</span>
+      <h2 id="skills-title" data-i18n="capabilitiesTitle">Technical depth and delivery scope</h2>
+      <div class="skill-grid">
+        <article class="skill-card">
+          <h3 data-i18n="skill1Title">AI engineering</h3>
+          <p data-i18n="skill1Desc">End-to-end LLM application delivery from prompt design to production traffic control.</p>
+          <ul class="skill-list">
+            <li data-i18n="skill1Tag1">Fine-tuning</li>
+            <li data-i18n="skill1Tag2">RAG</li>
+            <li data-i18n="skill1Tag3">Prompt Engineering</li>
+            <li data-i18n="skill1Tag4">Multi-Agent</li>
+            <li data-i18n="skill1Tag5">Workflow Orchestration</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3 data-i18n="skill2Title">Backend systems</h3>
+          <p data-i18n="skill2Desc">Service architecture built for stability, observability, and tenant-safe scale.</p>
+          <ul class="skill-list">
+            <li data-i18n="skill2Tag1">Python</li>
+            <li data-i18n="skill2Tag2">Go</li>
+            <li data-i18n="skill2Tag3">Microservices</li>
+            <li data-i18n="skill2Tag4">Rate Limiting</li>
+            <li data-i18n="skill2Tag5">Usage Billing</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3 data-i18n="skill3Title">Cloud-native operations</h3>
+          <p data-i18n="skill3Desc">Operational ownership from deployment to production troubleshooting.</p>
+          <ul class="skill-list">
+            <li data-i18n="skill3Tag1">Docker</li>
+            <li data-i18n="skill3Tag2">Kubernetes</li>
+            <li data-i18n="skill3Tag3">Redis</li>
+            <li data-i18n="skill3Tag4">Elasticsearch</li>
+            <li data-i18n="skill3Tag5">Incident Debugging</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3 data-i18n="skill4Title">Cross-team execution</h3>
+          <p data-i18n="skill4Desc">Partnering with product, operations, and enterprise clients to move priorities into shipped systems.</p>
+          <ul class="skill-list">
+            <li data-i18n="skill4Tag1">Requirement Scoping</li>
+            <li data-i18n="skill4Tag2">Customer Support</li>
+            <li data-i18n="skill4Tag3">API Integration</li>
+            <li data-i18n="skill4Tag4">Bilingual Communication</li>
+            <li data-i18n="skill4Tag5">Technical Writing</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="entry-title">
+      <span class="section-kicker" data-i18n="sectionEntryPoints">Entry points</span>
+      <h2 id="entry-title" data-i18n="entryTitle">Start from the context you need</h2>
+      <div class="link-grid">
+        <article class="entry-link">
+          <span data-i18n="entry1Tag">Career</span>
+          <h3 data-i18n="entry1Title">Resume</h3>
+          <p data-i18n="entry1Desc">Resume / CV snapshot available on request.</p>
+        </article>
+        <article class="entry-link">
+          <span data-i18n="entry2Tag">Code</span>
+          <h3 data-i18n="entry2Title">GitHub</h3>
+          <p data-i18n="entry2Desc">github.com/apocalypseyun</p>
+        </article>
+        <article class="entry-link">
+          <span data-i18n="entry3Tag">Direct</span>
+          <h3 data-i18n="entry3Title">Email</h3>
+          <p data-i18n="entry3Desc">liugz97@gmail.com</p>
+        </article>
+        <article class="entry-link">
+          <span data-i18n="entry4Tag">Direct</span>
+          <h3 data-i18n="entry4Title">Phone</h3>
+          <p data-i18n="entry4Desc">+86 188 1137 8369</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="contact">
+        <div>
+          <h2 data-i18n="contactTitle">Building AI products that balance model quality and production constraints.</h2>
+          <p data-i18n="contactDesc">
+            If you are working on enterprise AI infrastructure, developer tooling, or multilingual systems,
+            I am open to discussing product collaboration, platform engineering, and applied research.
+          </p>
+        </div>
+        <div class="contact-direct">
+          <strong data-i18n="contactDirectTitle">Direct channels</strong>
+          <span data-i18n="contactDirectEmail">Email: liugz97@gmail.com</span>
+          <span data-i18n="contactDirectPhone">Phone: +86 188 1137 8369</span>
+          <span data-i18n="contactDirectGithub">GitHub: github.com/apocalypseyun</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span><span data-i18n="footerCopyright">©</span> <span id="year"></span> Krislliu</span>
+      <span data-i18n="footerTagline">Built as a personal brand entry point · Xi'an, China</span>
+    </div>
+  </footer>
+
+  <aside class="tweaks" aria-label="Design tweaks" data-i18n-attr="aria-label:tweaksAria">
+    <h2 data-i18n="tweaksTitle">Tweaks</h2>
+    <div class="tweak-grid">
+      <label>
+        <span data-i18n="tweakAccentLabel">Accent</span>
+        <select id="accentMode">
+          <option value="cobalt" data-i18n="accentCobalt">Cobalt</option>
+          <option value="moss" data-i18n="accentMoss">Moss Green</option>
+          <option value="rust" data-i18n="accentRust">Rust</option>
+        </select>
+      </label>
+      <label>
+        <span data-i18n="tweakTypeScaleLabel">Type scale</span>
+        <input id="typeScale" type="range" min="0.95" max="1.08" value="1" step="0.01" />
+      </label>
+      <label>
+        <span data-i18n="tweakDensityLabel">Density</span>
+        <select id="densityMode">
+          <option value="comfortable" data-i18n="densityComfortable">Comfortable</option>
+          <option value="compact" data-i18n="densityCompact">Compact</option>
+        </select>
+      </label>
+      <label>
+        <span data-i18n="tweakContrastLabel">Contrast</span>
+        <select id="contrastMode">
+          <option value="default" data-i18n="contrastDefault">Default</option>
+          <option value="soft" data-i18n="contrastSoft">Soft</option>
+        </select>
+      </label>
+    </div>
+  </aside>
+
+  <script>
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "accentMode": "cobalt",
+      "typeScale": 1,
+      "densityMode": "comfortable",
+      "contrastMode": "default",
+      "language": "en"
+    }/*EDITMODE-END*/;
+
+    const I18N = {
+      en: {
+        pageTitle: 'Krislliu | AI Backend Engineer',
+        navAria: 'Primary',
+        langSwitchAria: 'Language switcher',
+        identityAria: 'Identity overview',
+        tweaksAria: 'Design tweaks',
+        brandRole: 'AI Backend Engineer',
+        navAbout: 'About',
+        navWork: 'Work',
+        navExperience: 'Experience',
+        navCapabilities: 'Capabilities',
+        navContact: 'Contact',
+        sectionProfile: 'Profile',
+        heroTitle: 'Building enterprise AI products from model capability to production reliability.',
+        heroDeck: 'I am Krislliu, an AI backend engineer currently working on Tencent Cloud ADP, CodeBuddy, and WorkBuddy. I focus on LLM infrastructure, prompt systems, usage billing, and resilient API services that survive real customer traffic.',
+        heroPrimaryContact: 'Email: liugz97@gmail.com',
+        heroGithub: 'GitHub: github.com/apocalypseyun',
+        identityCurrentLabel: 'Current',
+        identityCurrentValue: 'Tencent Cloud · AI Backend Engineer',
+        identityBaseLabel: 'Base',
+        identityBaseValue: "Xi'an, Shaanxi",
+        identityFocusLabel: 'Focus',
+        identityFocusValue: 'LLM + RAG, Multi-Agent workflow, API systems',
+        identityLanguagesLabel: 'Languages',
+        identityLanguagesValue: 'Mandarin, Cantonese, English',
+        identityReachLabel: 'Reach',
+        identityReachValue: 'github.com/apocalypseyun',
+        sectionCurrentFocus: 'Current focus',
+        focusTitle: 'What I am working on now',
+        focusItem1Title: 'Agent platform architecture',
+        focusItem1Desc: 'Designing core platform features for ADP, including workflow orchestration, model invocation scheduling, and quota-safe enterprise execution paths.',
+        focusItem2Title: 'Usage and billing integrity',
+        focusItem2Desc: 'Building usage metering, cost attribution, and enterprise-facing usage query flows for CodeBuddy and WorkBuddy open platform products.',
+        focusItem3Title: 'Prompt and response quality loops',
+        focusItem3Desc: 'Shipping prompt optimization capabilities that improve generation consistency while preserving throughput under production constraints.',
+        sectionSelectedWork: 'Selected work',
+        workTitle: 'Projects with concrete shipping scope',
+        work1Tag: 'ADP',
+        work1Date: '2025.10 - Present',
+        work1Title: 'Tencent Cloud Agent Development Platform',
+        work1Desc: 'Led independent site development, built blog and ad system modules, and fixed production SEO issues including sitemap and robot directives. Also shipped rate limiting, model dispatch, and billing capabilities for enterprise stability.',
+        work2Tag: 'CodeBuddy & WorkBuddy',
+        work2Date: '2025.10 - Present',
+        work2Title: 'Open platform usage systems',
+        work2Desc: 'Implemented usage billing and quota management, resolved pagination issues affecting key enterprise clients, and delivered real-time API services with around 200ms response behavior for engineering knowledge workflows.',
+        work3Tag: 'Multilingual MT',
+        work3Date: '2024.01 - 2025.03',
+        work3Title: 'Real-time translation with MOE + wait-k',
+        work3Desc: 'Trained multilingual translation models with Fairseq, integrated ASR-facing interfaces, and improved low-resource Cantonese data coverage through augmentation and terminology-aware generation.',
+        sectionExperience: 'Experience',
+        experienceTitle: 'Career timeline',
+        timeline1Role: 'Tencent Cloud · AI Backend Engineer',
+        timeline1Meta: "Oct 2025 - Present · Xi'an, China",
+        timeline1Desc: 'Backend development for AI Development Platform and intelligent assistant products, with Python/Go microservices running on Docker and Kubernetes.',
+        timeline2Role: 'The Hong Kong Polytechnic University · Research Associate',
+        timeline2Meta: 'Jan 2024 - Oct 2025 · Hong Kong, China',
+        timeline2Desc: 'Researched multilingual translation systems and contributed to assistive smart-glasses projects for visually impaired users.',
+        timeline3Role: 'Huawei · Software Engineer',
+        timeline3Meta: "Apr 2020 - Aug 2021 · Xi'an, China",
+        timeline3Desc: 'Developed cloud-container logging and alerting flows with Go, Fluentd, Elasticsearch, and Kubernetes deployment workflows.',
+        sectionCapabilities: 'Capabilities',
+        capabilitiesTitle: 'Technical depth and delivery scope',
+        skill1Title: 'AI engineering',
+        skill1Desc: 'End-to-end LLM application delivery from prompt design to production traffic control.',
+        skill1Tag1: 'Fine-tuning',
+        skill1Tag2: 'RAG',
+        skill1Tag3: 'Prompt Engineering',
+        skill1Tag4: 'Multi-Agent',
+        skill1Tag5: 'Workflow Orchestration',
+        skill2Title: 'Backend systems',
+        skill2Desc: 'Service architecture built for stability, observability, and tenant-safe scale.',
+        skill2Tag1: 'Python',
+        skill2Tag2: 'Go',
+        skill2Tag3: 'Microservices',
+        skill2Tag4: 'Rate Limiting',
+        skill2Tag5: 'Usage Billing',
+        skill3Title: 'Cloud-native operations',
+        skill3Desc: 'Operational ownership from deployment to production troubleshooting.',
+        skill3Tag1: 'Docker',
+        skill3Tag2: 'Kubernetes',
+        skill3Tag3: 'Redis',
+        skill3Tag4: 'Elasticsearch',
+        skill3Tag5: 'Incident Debugging',
+        skill4Title: 'Cross-team execution',
+        skill4Desc: 'Partnering with product, operations, and enterprise clients to move priorities into shipped systems.',
+        skill4Tag1: 'Requirement Scoping',
+        skill4Tag2: 'Customer Support',
+        skill4Tag3: 'API Integration',
+        skill4Tag4: 'Bilingual Communication',
+        skill4Tag5: 'Technical Writing',
+        sectionEntryPoints: 'Entry points',
+        entryTitle: 'Start from the context you need',
+        entry1Tag: 'Career',
+        entry1Title: 'Resume',
+        entry1Desc: 'Resume / CV snapshot available on request.',
+        entry2Tag: 'Code',
+        entry2Title: 'GitHub',
+        entry2Desc: 'github.com/apocalypseyun',
+        entry3Tag: 'Direct',
+        entry3Title: 'Email',
+        entry3Desc: 'liugz97@gmail.com',
+        entry4Tag: 'Direct',
+        entry4Title: 'Phone',
+        entry4Desc: '+86 188 1137 8369',
+        contactTitle: 'Building AI products that balance model quality and production constraints.',
+        contactDesc: 'If you are working on enterprise AI infrastructure, developer tooling, or multilingual systems, I am open to discussing product collaboration, platform engineering, and applied research.',
+        contactDirectTitle: 'Direct channels',
+        contactDirectEmail: 'Email: liugz97@gmail.com',
+        contactDirectPhone: 'Phone: +86 188 1137 8369',
+        contactDirectGithub: 'GitHub: github.com/apocalypseyun',
+        footerCopyright: '©',
+        footerTagline: "Built as a personal brand entry point · Xi'an, China",
+        tweaksTitle: 'Tweaks',
+        tweakAccentLabel: 'Accent',
+        accentCobalt: 'Cobalt',
+        accentMoss: 'Moss Green',
+        accentRust: 'Rust',
+        tweakTypeScaleLabel: 'Type scale',
+        tweakDensityLabel: 'Density',
+        densityComfortable: 'Comfortable',
+        densityCompact: 'Compact',
+        tweakContrastLabel: 'Contrast',
+        contrastDefault: 'Default',
+        contrastSoft: 'Soft'
+      },
+      zh: {
+        pageTitle: 'Krislliu | AI 后端工程师',
+        navAria: '主导航',
+        langSwitchAria: '语言切换',
+        identityAria: '身份概览',
+        tweaksAria: '样式调节',
+        brandRole: 'AI 后端工程师',
+        navAbout: '关于我',
+        navWork: '项目',
+        navExperience: '经历',
+        navCapabilities: '能力',
+        navContact: '联系',
+        sectionProfile: '个人简介',
+        heroTitle: '把大模型能力落到企业级稳定生产的 AI 产品。',
+        heroDeck: '我是Krislliu，目前在腾讯云参与 ADP、CodeBuddy、WorkBuddy 的 AI 后端建设，聚焦 LLM 基础设施、Prompt 系统、用量计费与高可用 API 服务。',
+        heroPrimaryContact: '邮箱：liugz97@gmail.com',
+        heroGithub: 'GitHub：github.com/apocalypseyun',
+        identityCurrentLabel: '当前',
+        identityCurrentValue: '腾讯云 · AI 后端工程师',
+        identityBaseLabel: '所在地',
+        identityBaseValue: '陕西西安',
+        identityFocusLabel: '方向',
+        identityFocusValue: 'LLM + RAG、多智能体流程、API 系统',
+        identityLanguagesLabel: '语言',
+        identityLanguagesValue: '普通话、粤语、英语',
+        identityReachLabel: '渠道',
+        identityReachValue: 'github.com/apocalypseyun',
+        sectionCurrentFocus: '当前重点',
+        focusTitle: '我正在推进的工作',
+        focusItem1Title: 'Agent 平台架构',
+        focusItem1Desc: '设计 ADP 核心平台能力，包括工作流编排、模型调用调度以及面向企业的配额安全执行链路。',
+        focusItem2Title: '用量与计费一致性',
+        focusItem2Desc: '为 CodeBuddy 与 WorkBuddy 开放平台构建用量采集、成本归因与企业可查询计费流程。',
+        focusItem3Title: 'Prompt 与响应质量闭环',
+        focusItem3Desc: '持续交付 Prompt 优化能力，在生产约束下提升生成稳定性并维持吞吐效率。',
+        sectionSelectedWork: '代表项目',
+        workTitle: '有明确交付边界的项目实践',
+        work1Tag: 'ADP',
+        work1Date: '2025.10 - 至今',
+        work1Title: '腾讯云 Agent 开发平台',
+        work1Desc: '独立负责站点开发，完成博客与广告系统模块，修复 sitemap、robots 等线上 SEO 问题；并交付限流、模型调度与计费能力，提升企业稳定性。',
+        work2Tag: 'CodeBuddy & WorkBuddy',
+        work2Date: '2025.10 - 至今',
+        work2Title: '开放平台用量系统',
+        work2Desc: '实现用量计费与配额管理，修复关键企业客户的分页问题，并交付约 200ms 响应的实时 API 服务支撑工程知识工作流。',
+        work3Tag: 'Multilingual MT',
+        work3Date: '2024.01 - 2025.03',
+        work3Title: 'MOE + wait-k 实时翻译',
+        work3Desc: '使用 Fairseq 训练多语言翻译模型，集成 ASR 接口，并通过数据增强与术语约束提升低资源粤语场景覆盖。',
+        sectionExperience: '职业经历',
+        experienceTitle: '时间线',
+        timeline1Role: '腾讯云 · AI 后端工程师',
+        timeline1Meta: '2025.10 - 至今 · 中国西安',
+        timeline1Desc: '负责 AI 开发平台与智能助手产品后端，基于 Python/Go 微服务，运行于 Docker 与 Kubernetes。',
+        timeline2Role: '香港理工大学 · Research Associate',
+        timeline2Meta: '2024.01 - 2025.10 · 中国香港',
+        timeline2Desc: '研究多语言翻译系统，并参与面向视障人群的智能眼镜项目。',
+        timeline3Role: '华为 · 软件工程师',
+        timeline3Meta: '2020.04 - 2021.08 · 中国西安',
+        timeline3Desc: '基于 Go、Fluentd、Elasticsearch 与 Kubernetes 构建云容器日志与告警流程。',
+        sectionCapabilities: '能力图谱',
+        capabilitiesTitle: '技术深度与交付范围',
+        skill1Title: 'AI 工程',
+        skill1Desc: '覆盖从 Prompt 设计到生产流量控制的端到端 LLM 应用交付。',
+        skill1Tag1: '微调',
+        skill1Tag2: 'RAG',
+        skill1Tag3: 'Prompt 工程',
+        skill1Tag4: '多智能体',
+        skill1Tag5: '工作流编排',
+        skill2Title: '后端系统',
+        skill2Desc: '面向稳定性、可观测性与租户安全扩展构建服务架构。',
+        skill2Tag1: 'Python',
+        skill2Tag2: 'Go',
+        skill2Tag3: '微服务',
+        skill2Tag4: '限流',
+        skill2Tag5: '用量计费',
+        skill3Title: '云原生运维',
+        skill3Desc: '从部署上线到线上排障的全链路工程负责。',
+        skill3Tag1: 'Docker',
+        skill3Tag2: 'Kubernetes',
+        skill3Tag3: 'Redis',
+        skill3Tag4: 'Elasticsearch',
+        skill3Tag5: '故障排查',
+        skill4Title: '跨团队执行',
+        skill4Desc: '与产品、运营和企业客户协同，把业务优先级落成可上线系统。',
+        skill4Tag1: '需求范围定义',
+        skill4Tag2: '客户支持',
+        skill4Tag3: 'API 集成',
+        skill4Tag4: '双语沟通',
+        skill4Tag5: '技术文档',
+        sectionEntryPoints: '入口',
+        entryTitle: '按你需要的上下文开始',
+        entry1Tag: '职业',
+        entry1Title: '简历',
+        entry1Desc: '简历 / 履历摘要可按需提供。',
+        entry2Tag: '代码',
+        entry2Title: 'GitHub',
+        entry2Desc: 'github.com/apocalypseyun',
+        entry3Tag: '直连',
+        entry3Title: '邮箱',
+        entry3Desc: 'liugz97@gmail.com',
+        entry4Tag: '直连',
+        entry4Title: '电话',
+        entry4Desc: '+86 188 1137 8369',
+        contactTitle: '构建兼顾模型质量与生产约束的 AI 产品。',
+        contactDesc: '如果你正在做企业级 AI 基础设施、开发者工具或多语言系统，欢迎交流产品合作、平台工程与应用研究。',
+        contactDirectTitle: '直接联系渠道',
+        contactDirectEmail: '邮箱：liugz97@gmail.com',
+        contactDirectPhone: '电话：+86 188 1137 8369',
+        contactDirectGithub: 'GitHub：github.com/apocalypseyun',
+        footerCopyright: '©',
+        footerTagline: '作为个人品牌入口构建 · 中国西安',
+        tweaksTitle: '样式调节',
+        tweakAccentLabel: '强调色',
+        accentCobalt: '钴蓝',
+        accentMoss: '苔绿',
+        accentRust: '锈橙',
+        tweakTypeScaleLabel: '字号比例',
+        tweakDensityLabel: '信息密度',
+        densityComfortable: '舒适',
+        densityCompact: '紧凑',
+        tweakContrastLabel: '对比度',
+        contrastDefault: '默认',
+        contrastSoft: '柔和'
+      }
+    };
+
+    const tweakKeys = Object.keys(TWEAK_DEFAULTS);
+    const supportedLanguages = ['en', 'zh'];
+    const supportedAccentModes = ['cobalt', 'moss', 'rust'];
+    const supportedDensityModes = ['comfortable', 'compact'];
+    const supportedContrastModes = ['default', 'soft'];
+    let persistedTweaks = {};
+    try {
+      persistedTweaks = JSON.parse(localStorage.getItem('personal-site-tweaks') || '{}') || {};
+    } catch (error) {
+      persistedTweaks = {};
+    }
+    const state = { ...TWEAK_DEFAULTS, ...persistedTweaks };
+    if (!Object.prototype.hasOwnProperty.call(persistedTweaks, 'language')) {
+      state.language = (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+    }
+    state.typeScale = Number(state.typeScale);
+    if (!Number.isFinite(state.typeScale)) {
+      state.typeScale = TWEAK_DEFAULTS.typeScale;
+    }
+    state.typeScale = Math.min(1.08, Math.max(0.95, state.typeScale));
+    if (!supportedLanguages.includes(state.language)) {
+      state.language = TWEAK_DEFAULTS.language;
+    }
+    if (!supportedAccentModes.includes(state.accentMode)) {
+      state.accentMode = TWEAK_DEFAULTS.accentMode;
+    }
+    if (!supportedDensityModes.includes(state.densityMode)) {
+      state.densityMode = TWEAK_DEFAULTS.densityMode;
+    }
+    if (!supportedContrastModes.includes(state.contrastMode)) {
+      state.contrastMode = TWEAK_DEFAULTS.contrastMode;
+    }
+
+    const accents = {
+      cobalt: 'oklch(58% 0.18 255)',
+      moss: 'oklch(62% 0.13 150)',
+      rust: 'oklch(60% 0.16 30)'
+    };
+
+    const controls = {
+      accentMode: document.getElementById('accentMode'),
+      typeScale: document.getElementById('typeScale'),
+      densityMode: document.getElementById('densityMode'),
+      contrastMode: document.getElementById('contrastMode')
+    };
+    const languageButtons = Array.from(document.querySelectorAll('[data-lang-btn]'));
+
+    function persistState() {
+      try {
+        localStorage.setItem('personal-site-tweaks', JSON.stringify(state));
+      } catch (error) {
+        return;
+      }
+    }
+
+    function applyLanguage(language) {
+      const nextLanguage = supportedLanguages.includes(language) ? language : 'en';
+      const dictionary = I18N[nextLanguage];
+      state.language = nextLanguage;
+      document.documentElement.lang = nextLanguage === 'zh' ? 'zh-CN' : 'en';
+      document.title = dictionary.pageTitle;
+
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.dataset.i18n;
+        if (!key || dictionary[key] === undefined) {
+          return;
+        }
+        element.textContent = dictionary[key];
+      });
+
+      document.querySelectorAll('[data-i18n-attr]').forEach((element) => {
+        const bindings = element.dataset.i18nAttr.split(';').map((entry) => entry.trim()).filter(Boolean);
+        bindings.forEach((binding) => {
+          const [attribute, key] = binding.split(':').map((token) => token.trim());
+          if (!attribute || !key || dictionary[key] === undefined) {
+            return;
+          }
+          element.setAttribute(attribute, dictionary[key]);
+        });
+      });
+
+      languageButtons.forEach((button) => {
+        const isActive = button.dataset.langBtn === nextLanguage;
+        button.setAttribute('aria-pressed', String(isActive));
+      });
+    }
+
+    function applyTweaks() {
+      const root = document.documentElement;
+      root.style.setProperty('--accent', accents[state.accentMode]);
+      root.style.setProperty('--type-scale', String(state.typeScale));
+      document.body.dataset.density = state.densityMode === 'compact' ? 'compact' : 'comfortable';
+      document.body.dataset.contrast = state.contrastMode === 'soft' ? 'soft' : 'default';
+      persistState();
+    }
+
+    tweakKeys.forEach((key) => {
+      if (!controls[key]) {
+        return;
+      }
+      controls[key].value = String(state[key]);
+      controls[key].addEventListener('input', (event) => {
+        state[key] = key === 'typeScale' ? Number(event.target.value) : event.target.value;
+        applyTweaks();
+      });
+      controls[key].addEventListener('change', (event) => {
+        state[key] = key === 'typeScale' ? Number(event.target.value) : event.target.value;
+        applyTweaks();
+      });
+    });
+
+    languageButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        applyLanguage(button.dataset.langBtn);
+        persistState();
+      });
+    });
+
+    document.getElementById('year').textContent = String(new Date().getFullYear());
+    applyTweaks();
+    applyLanguage(state.language);
+  </script>
 </body>
 </html>
