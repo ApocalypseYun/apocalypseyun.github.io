@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Krislliu | AI Backend Engineer</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260514a" />
-  <link rel="shortcut icon" href="favicon.svg?v=20260514a" />
+  <link rel="icon" type="image/jpeg" href="assets/portrait-variants/avatar-style-01.jpg" data-favicon />
+  <link rel="shortcut icon" href="assets/portrait-variants/avatar-style-01.jpg" data-favicon />
   <style>
     :root {
       --bg: oklch(99% 0.002 240);
@@ -256,13 +256,28 @@
       padding: 0.9rem;
     }
 
+    .portrait-media {
+      position: relative;
+      overflow: hidden;
+      inline-size: 100%;
+      aspect-ratio: 1 / 1;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) - 4px);
+      background: color-mix(in oklch, var(--surface) 88%, var(--bg));
+    }
+
     .portrait-frame img {
       display: block;
       inline-size: 100%;
-      block-size: auto;
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius) - 4px);
-      background: var(--surface);
+      block-size: 100%;
+      object-fit: cover;
+      object-position: center 34%;
+      transform: scale(1.015);
+      transition: transform 220ms ease;
+    }
+
+    .portrait-card:hover .portrait-frame img {
+      transform: scale(1.045);
     }
 
     .portrait-caption {
@@ -676,15 +691,19 @@
         <div class="hero-side">
           <figure class="portrait-card" aria-label="Portrait illustration" data-i18n-attr="aria-label:portraitAria">
             <div class="portrait-frame">
-              <img
-                src="assets/avatar-krislliu-illustration.svg"
-                alt="Stylized portrait illustration of Krislliu"
-                data-i18n-attr="alt:portraitAlt"
-                loading="eager"
-                decoding="async"
-              />
+              <div class="portrait-media">
+                <img
+                  id="portrait-image"
+                  src="assets/portrait-variants/avatar-style-01.jpg"
+                  alt="Stylized portrait illustration of Krislliu"
+                  data-i18n-attr="alt:portraitAlt"
+                  data-portrait-image
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
             </div>
-            <figcaption class="portrait-caption" data-i18n="portraitCaption">Representational illustration generated from reference photo.</figcaption>
+            <figcaption class="portrait-caption" data-i18n="portraitCaption">Randomly selected stylized portrait from my curated avatar set.</figcaption>
           </figure>
           <aside class="identity-card" aria-label="Identity overview" data-i18n-attr="aria-label:identityAria">
             <dl>
@@ -912,7 +931,7 @@
         langSwitchAria: 'Language switcher',
         portraitAria: 'Portrait illustration',
         portraitAlt: 'Stylized portrait illustration of Krislliu',
-        portraitCaption: 'Representational illustration generated from reference photo.',
+        portraitCaption: 'Randomly selected stylized portrait from my curated avatar set.',
         identityAria: 'Identity overview',
         brandRole: 'AI Backend Engineer',
         navAbout: 'About',
@@ -1027,7 +1046,7 @@
         langSwitchAria: '语言切换',
         portraitAria: '人物插画',
         portraitAlt: 'Krislliu 的风格化人物插画',
-        portraitCaption: '基于参考照片生成的非真人插画形象。',
+        portraitCaption: '从我的头像候选集中随机展示的风格化形象。',
         identityAria: '身份概览',
         brandRole: 'AI 后端工程师',
         navAbout: '关于我',
@@ -1141,6 +1160,67 @@
     const STORAGE_KEY = 'personal-site-language';
     const supportedLanguages = ['en', 'zh'];
     const languageButtons = Array.from(document.querySelectorAll('[data-lang-btn]'));
+    const AVATAR_SOURCES = [
+      'assets/portrait-variants/avatar-style-01.jpg',
+      'assets/portrait-variants/avatar-style-02.jpg',
+      'assets/portrait-variants/avatar-style-03.jpg',
+      'assets/portrait-variants/avatar-style-04.jpg'
+    ];
+    const portraitImageElement = document.querySelector('[data-portrait-image]');
+    const faviconLinks = Array.from(document.querySelectorAll('link[data-favicon]'));
+
+    function randomIndex(max) {
+      if (max <= 0) {
+        return 0;
+      }
+      if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
+        const buffer = new Uint32Array(1);
+        window.crypto.getRandomValues(buffer);
+        return buffer[0] % max;
+      }
+      return Math.floor(Math.random() * max);
+    }
+
+    function setFavicon(href, type = 'image/png') {
+      faviconLinks.forEach((link) => {
+        link.setAttribute('href', href);
+        link.setAttribute('type', type);
+      });
+    }
+
+    function syncFaviconWithPortrait(source) {
+      const image = new Image();
+      image.decoding = 'async';
+      image.onload = () => {
+        const size = 64;
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const context = canvas.getContext('2d');
+        if (!context) {
+          setFavicon(source, 'image/jpeg');
+          return;
+        }
+        const shortestEdge = Math.min(image.naturalWidth, image.naturalHeight);
+        const sourceX = Math.floor((image.naturalWidth - shortestEdge) / 2);
+        const sourceY = Math.floor((image.naturalHeight - shortestEdge) / 2);
+        context.drawImage(image, sourceX, sourceY, shortestEdge, shortestEdge, 0, 0, size, size);
+        setFavicon(canvas.toDataURL('image/png'), 'image/png');
+      };
+      image.onerror = () => {
+        setFavicon(source, 'image/jpeg');
+      };
+      image.src = source;
+    }
+
+    function applyRandomPortrait() {
+      if (!portraitImageElement || AVATAR_SOURCES.length === 0) {
+        return;
+      }
+      const selectedSource = AVATAR_SOURCES[randomIndex(AVATAR_SOURCES.length)];
+      portraitImageElement.setAttribute('src', selectedSource);
+      syncFaviconWithPortrait(selectedSource);
+    }
 
     function persistLanguage(language) {
       try {
@@ -1201,6 +1281,7 @@
     });
 
     document.getElementById('year').textContent = String(new Date().getFullYear());
+    applyRandomPortrait();
     applyLanguage(getInitialLanguage());
   </script>
 </body>
