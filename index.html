@@ -2,42 +2,83 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Krislliu | AI Backend Engineer</title>
   <link rel="icon" type="image/jpeg" href="assets/portrait-variants/avatar-style-01.jpg" data-favicon />
   <link rel="shortcut icon" href="assets/portrait-variants/avatar-style-01.jpg" data-favicon />
   <style>
+    /* ── kami (紙 / 纸) — print-first editorial system ───────────────────
+     * Warm parchment canvas, single ink-blue accent (≤5% surface),
+     * serif at one weight (500), warm gray ramp, no italic, no cool
+     * grays, no hard shadows. Tag fills solid hex (print-safe).
+     * See design-systems/kami/DESIGN.md for the full contract. */
     :root {
-      --bg: oklch(99% 0.002 240);
-      --surface: oklch(100% 0 0);
-      --fg: oklch(18% 0.012 250);
-      --muted: oklch(54% 0.012 250);
-      --border: oklch(92% 0.005 250);
-      --accent: oklch(58% 0.18 255);
+      /* Surface (3 warm levels — never #ffffff) */
+      --bg: #f5f4ed;            /* parchment — page background */
+      --surface: #faf9f5;       /* ivory — cards, lifted containers */
+      --surface-warm: #e8e6dc;  /* warm sand — default button bg */
 
-      --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
-      --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
-      --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      /* Foreground ramp (4 warm levels — R ≈ G > B) */
+      --fg: #141413;            /* near-black — primary text */
+      --fg-2: #3d3d3a;          /* dark-warm — secondary text, nav defaults */
+      --muted: #504e49;         /* olive — subtext, captions */
+      --meta: #6b6a64;          /* stone — metadata, kickers */
 
-      --page-max: 1248px;
+      /* Border (2 warm levels) */
+      --border: #e8e6dc;
+      --border-soft: #e5e3d8;
+
+      /* Accent — the single chromatic move. Hard cap ≤5% of surface. */
+      --accent: #1b365d;        /* ink blue */
+      --accent-on: #faf9f5;     /* ivory fg on accent bg */
+      --accent-active: #142a48; /* ~12% darker ink — focus ring */
+
+      /* Tag tints — solid hex pre-blends over parchment (NOT rgba) */
+      --tag-bg-faint: #eef2f7;
+      --tag-bg-soft: #e4ecf5;
+
+      /* Typography — default EN serif stack. zh override below. */
+      --font-display: Charter, Georgia, Palatino, "Times New Roman", serif;
+      --font-body: Charter, Georgia, Palatino, "Times New Roman", serif;
+      --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+
+      /* Geometry */
+      --page-max: 1120px;
       --content-max: 68ch;
-      --radius: 14px;
-      --space-xs: 0.5rem;
-      --space-sm: 0.875rem;
-      --space-md: 1.25rem;
+      --radius: 8px;
+      --radius-sm: 4px;
       --space-lg: 2rem;
       --space-xl: 3.5rem;
       --space-2xl: clamp(3.8rem, 7.2vw, 5.2rem);
       --header-offset: 5.2rem;
-      --type-scale: 1;
-      --density: 1;
-      --shadow-soft: 0 1px 1px color-mix(in oklch, var(--fg) 3%, transparent),
-        0 16px 24px color-mix(in oklch, var(--fg) 4%, transparent);
+
+      /* Elevation — 3 sanctioned levels, no hard drops */
+      --elev-ring: 0 0 0 1px var(--border);
+      --elev-ring-accent: 0 0 0 1px var(--accent);
+      --elev-whisper: 0 4px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    /* zh-CN: swap to a CJK serif stack so Chinese glyphs render with
+     * proper mincho/song weight against parchment. */
+    :root[lang="zh-CN"],
+    :root[lang="zh"] {
+      --font-display:
+        "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC",
+        "Songti SC", "STSong", Georgia, serif;
+      --font-body:
+        "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC",
+        "Songti SC", "STSong", Georgia, serif;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    /* Serif weight ceiling: 500. Prevent synthetic bold anywhere. */
+    strong, b {
+      font-weight: 500;
     }
 
     html,
@@ -47,33 +88,30 @@
       background: var(--bg);
       color: var(--fg);
       font-family: var(--font-body);
-      line-height: 1.58;
-      font-size: calc(16px * var(--type-scale));
+      font-weight: 400;
+      line-height: 1.55;
+      font-size: 16px;
       text-wrap: pretty;
+      -webkit-font-smoothing: antialiased;
     }
 
     html {
       scroll-padding-top: var(--header-offset);
     }
 
+    /* No decorative gradient on the page — parchment is the personality.
+     * Keep the selector harmless instead of deleting markup hooks. */
     body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 12% 0%, color-mix(in oklch, var(--fg) 4%, transparent), transparent 36%),
-        radial-gradient(circle at 88% 20%, color-mix(in oklch, var(--fg) 3%, transparent), transparent 30%);
-      opacity: 0.65;
-      z-index: -1;
+      content: none;
     }
 
     .site-header {
       position: sticky;
       inset-block-start: 0;
       z-index: 20;
-      backdrop-filter: blur(8px);
-      background: color-mix(in oklch, var(--bg) 88%, white 12%);
+      /* No backdrop-filter (kami forbids compositing tricks). Use a
+       * semi-transparent parchment so scroll content shows through gently. */
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
       border-block-end: 1px solid var(--border);
     }
 
@@ -94,21 +132,21 @@
 
     .brand {
       font-family: var(--font-display);
-      font-weight: 620;
-      letter-spacing: -0.02em;
-      font-size: calc(1.08rem * var(--type-scale));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      font-size: 1.1rem;
       text-decoration: none;
       color: var(--fg);
     }
 
     .brand small {
       display: block;
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--meta);
       margin-top: 0.2rem;
     }
 
@@ -128,24 +166,24 @@
     }
 
     .top-nav a {
-      color: var(--muted);
+      color: var(--fg-2);
       text-decoration: none;
-      font-size: 0.88rem;
-      letter-spacing: 0.02em;
-      font-weight: 560;
+      font-size: 0.92rem;
+      letter-spacing: 0;
+      font-weight: 500;
       transition: color 180ms ease;
     }
 
+    /* Accent use #1 — interactive hover only (not static surface) */
     .top-nav a:hover {
       color: var(--accent);
     }
 
     .top-nav a:focus-visible {
       color: var(--fg);
-      outline: 2px solid color-mix(in oklch, var(--accent) 45%, var(--border));
+      outline: 2px solid var(--accent-active);
       outline-offset: 3px;
-      border-radius: 6px;
-      text-decoration: none;
+      border-radius: var(--radius-sm);
     }
 
     .section[id] {
@@ -157,7 +195,7 @@
     }
 
     .section:first-of-type {
-      padding-block-start: calc(var(--space-md) * var(--density));
+      padding-block-start: 1.25rem;
     }
 
     .section:first-of-type .section-kicker {
@@ -165,7 +203,7 @@
     }
 
     .section:first-of-type .hero-title {
-      max-inline-size: 14ch;
+      max-inline-size: 15ch;
     }
 
     .section:first-of-type .hero-deck {
@@ -186,6 +224,7 @@
       gap: 0;
     }
 
+    /* A single hairline rule under the hero lede — ink-free, structural */
     .section:first-of-type .hero-main::after {
       content: '';
       margin-top: 1rem;
@@ -199,20 +238,33 @@
       align-items: center;
       min-block-size: 2.5rem;
       padding-inline: 0.95rem;
-      border-radius: 0.75rem;
+      border-radius: var(--radius);
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--fg);
-      font-size: 0.83rem;
-      font-family: var(--font-mono);
-      letter-spacing: 0.02em;
-      user-select: text;
-      cursor: text;
+      font-size: 0.86rem;
+      font-family: var(--font-body);
+      font-weight: 500;
+      letter-spacing: 0;
+      text-decoration: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
     }
 
+    .section:first-of-type .hero-contact:hover {
+      border-color: var(--accent);
+      box-shadow: var(--elev-whisper);
+    }
+
+    .section:first-of-type .hero-contact:focus-visible {
+      outline: 2px solid var(--accent-active);
+      outline-offset: 2px;
+    }
+
+    /* Primary contact: solid kami tag tint + ink-blue text — 1 accent use */
     .section:first-of-type .hero-contact-primary {
-      background: color-mix(in oklch, var(--accent) 9%, var(--surface));
-      border-color: color-mix(in oklch, var(--accent) 22%, var(--border));
+      background: var(--tag-bg-soft);
+      border-color: var(--tag-bg-soft);
+      color: var(--accent);
     }
 
     .section:first-of-type .hero-contact-secondary {
@@ -236,7 +288,7 @@
       gap: 0.32rem;
       padding: 0.55rem 0.85rem;
       border-block-end: none;
-      border-inline-end: 1px solid var(--border);
+      border-inline-end: 1px solid var(--border-soft);
     }
 
     .section:first-of-type .hero-identity .identity-row:last-child {
@@ -244,12 +296,12 @@
     }
 
     .section:first-of-type .hero-identity .identity-row dt {
-      font-size: 0.65rem;
+      font-size: 0.66rem;
       letter-spacing: 0.08em;
     }
 
     .section:first-of-type .hero-identity .identity-row dd {
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       line-height: 1.5;
     }
 
@@ -268,8 +320,8 @@
     }
 
     .section:first-of-type .portrait-caption {
-      font-size: 0.66rem;
-      letter-spacing: 0.085em;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
     }
 
     @media (min-width: 1480px) {
@@ -284,64 +336,69 @@
       padding: 0.16rem;
       border: 1px solid var(--border);
       border-radius: 999px;
-      background: var(--surface);
+      background: var(--surface-warm);
     }
 
     .lang-btn {
       border: none;
       background: transparent;
-      color: var(--muted);
+      color: var(--meta);
       border-radius: 999px;
       min-inline-size: 2.35rem;
       min-block-size: 1.95rem;
       padding-inline: 0.65rem;
-      font-size: 0.73rem;
-      font-family: var(--font-mono);
-      font-weight: 550;
-      letter-spacing: 0.06em;
+      font-size: 0.74rem;
+      font-family: var(--font-display);
+      font-weight: 500;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       cursor: pointer;
       transition: background 160ms ease, color 160ms ease;
     }
 
+    /* Active language: ink-blue fill, ivory text — accent use #2 */
     .lang-btn[aria-pressed='true'] {
-      color: var(--surface);
-      background: var(--fg);
+      color: var(--accent-on);
+      background: var(--accent);
     }
 
     .lang-btn:focus-visible {
-      outline: 2px solid color-mix(in oklch, var(--accent) 45%, var(--border));
+      outline: 2px solid var(--accent-active);
       outline-offset: 1px;
     }
 
     main {
       padding-block: var(--space-2xl);
       display: grid;
-      gap: calc(var(--space-2xl) * var(--density));
+      gap: var(--space-2xl);
     }
 
     .section {
       border-block-start: 1px solid var(--border);
-      padding-block-start: calc(var(--space-lg) * var(--density));
+      padding-block-start: var(--space-lg);
     }
 
+    /* Eyebrow / overline — serif uppercase, positive tracking */
     .section-kicker {
       display: inline-block;
       margin-block-end: 0.9rem;
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--meta);
     }
 
     h2 {
       margin: 0;
       font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.6vw, 2.05rem);
-      line-height: 1.16;
-      letter-spacing: -0.02em;
+      font-weight: 500;
+      font-size: clamp(1.5rem, 2.6vw, 2.05rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
       max-inline-size: 24ch;
+      color: var(--fg);
     }
 
     .hero-grid {
@@ -353,19 +410,21 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(2.7rem, 5vw, 4.35rem);
-      line-height: 1.06;
-      letter-spacing: -0.028em;
+      font-weight: 500;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
       margin: 0;
       max-inline-size: 16ch;
+      color: var(--fg);
     }
 
     .hero-deck {
       margin-top: 1.25rem;
       max-inline-size: var(--content-max);
       color: var(--muted);
-      font-size: clamp(1.05rem, 1.65vw, 1.24rem);
-      line-height: 1.52;
+      font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+      line-height: 1.55;
     }
 
     .hero-actions {
@@ -380,14 +439,13 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: var(--surface);
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--elev-ring);
       overflow: hidden;
     }
 
+    /* No accent gradient wash — ivory frame, quiet */
     .portrait-frame {
-      background:
-        radial-gradient(circle at 80% 14%, color-mix(in oklch, var(--accent) 16%, var(--surface)), transparent 42%),
-        linear-gradient(180deg, color-mix(in oklch, var(--surface) 84%, var(--bg)), var(--surface));
+      background: var(--surface);
       padding: 0.9rem;
     }
 
@@ -397,8 +455,8 @@
       inline-size: 100%;
       aspect-ratio: 1 / 1;
       border: 1px solid var(--border);
-      border-radius: calc(var(--radius) - 4px);
-      background: color-mix(in oklch, var(--surface) 88%, var(--bg));
+      border-radius: var(--radius-sm);
+      background: var(--surface);
     }
 
     .portrait-frame img {
@@ -418,12 +476,13 @@
     .portrait-caption {
       margin: 0;
       padding: 0.8rem 1rem 0.95rem;
-      font-family: var(--font-mono);
-      font-size: 0.69rem;
-      letter-spacing: 0.07em;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
+      color: var(--meta);
+      border-top: 1px solid var(--border-soft);
     }
 
     .identity-card {
@@ -431,7 +490,7 @@
       border-radius: var(--radius);
       background: var(--surface);
       padding: 1.25rem;
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--elev-ring);
     }
 
     .identity-row {
@@ -440,8 +499,8 @@
       align-items: baseline;
       gap: 0.75rem;
       padding-block: 0.52rem;
-      border-block-end: 1px solid var(--border);
-      font-size: 0.92rem;
+      border-block-end: 1px solid var(--border-soft);
+      font-size: 0.94rem;
     }
 
     .identity-row:last-child {
@@ -451,16 +510,17 @@
 
     .identity-row dt {
       margin: 0;
-      color: var(--muted);
-      font-family: var(--font-mono);
+      color: var(--meta);
+      font-family: var(--font-display);
       font-size: 0.72rem;
+      font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .identity-row dd {
       margin: 0;
-      font-weight: 520;
+      font-weight: 500;
       color: var(--fg);
       overflow-wrap: anywhere;
     }
@@ -486,16 +546,24 @@
       border-radius: var(--radius);
       background: var(--surface);
       padding: 1rem 1rem 1.15rem;
+      transition: box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .work-card:hover,
+    .skill-card:hover {
+      box-shadow: var(--elev-whisper);
     }
 
     .focus-item h3,
     .work-card h3,
     .skill-card h3 {
       margin: 0;
-      font-size: 1.03rem;
+      font-size: 1.05rem;
       line-height: 1.35;
       letter-spacing: -0.01em;
       font-family: var(--font-display);
+      font-weight: 500;
+      color: var(--fg);
     }
 
     .focus-item p,
@@ -505,7 +573,7 @@
       margin: 0.55rem 0 0;
       color: var(--muted);
       font-size: 0.92rem;
-      line-height: 1.56;
+      line-height: 1.55;
     }
 
     .work-grid {
@@ -518,11 +586,12 @@
       align-items: center;
       gap: 0.8rem;
       margin-bottom: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--meta);
     }
 
     .timeline {
@@ -536,7 +605,7 @@
     .timeline-item {
       position: relative;
       padding: 0.95rem 0 0.95rem 1.3rem;
-      border-block-end: 1px solid var(--border);
+      border-block-end: 1px solid var(--border-soft);
     }
 
     .timeline-item:last-child {
@@ -544,6 +613,7 @@
       padding-block-end: 0.2rem;
     }
 
+    /* Timeline dot — warm dark, not accent (save the accent budget) */
     .timeline-item::before {
       content: '';
       position: absolute;
@@ -552,21 +622,24 @@
       inline-size: 0.5rem;
       block-size: 0.5rem;
       border-radius: 999px;
-      background: color-mix(in oklch, var(--fg) 62%, var(--surface));
+      background: var(--fg-2);
     }
 
     .timeline-role {
       margin: 0;
       font-family: var(--font-display);
-      font-size: 1rem;
+      font-weight: 500;
+      font-size: 1.02rem;
       letter-spacing: -0.01em;
+      color: var(--fg);
     }
 
     .timeline-meta {
       margin-top: 0.24rem;
-      color: var(--muted);
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
+      color: var(--meta);
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -575,6 +648,7 @@
       margin: 0.55rem 0 0;
       color: var(--muted);
       font-size: 0.92rem;
+      line-height: 1.55;
       max-inline-size: var(--content-max);
     }
 
@@ -591,16 +665,20 @@
       gap: 0.4rem;
     }
 
+    /* Skill tags — solid kami tag tint, dark-warm text (not accent),
+     * so a 20-tag grid doesn't blow the ≤5% accent budget. */
     .skill-list li {
       display: inline-flex;
       align-items: center;
-      padding: 0.28rem 0.56rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
+      padding: 0.26rem 0.6rem;
+      border: none;
+      border-radius: var(--radius-sm);
       font-size: 0.74rem;
-      letter-spacing: 0.02em;
-      color: var(--muted);
-      font-family: var(--font-mono);
+      letter-spacing: 0;
+      color: var(--fg-2);
+      background: var(--tag-bg-faint);
+      font-family: var(--font-display);
+      font-weight: 500;
     }
 
     .link-grid {
@@ -608,22 +686,38 @@
     }
 
     .entry-link {
+      display: block;
       color: inherit;
+      text-decoration: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .entry-link:hover {
+      border-color: var(--accent);
+      box-shadow: var(--elev-whisper);
+    }
+
+    .entry-link:focus-visible {
+      outline: 2px solid var(--accent-active);
+      outline-offset: 2px;
     }
 
     .entry-link span {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--meta);
     }
 
     .entry-link h3 {
       margin: 0.5rem 0 0;
-      font-size: 1rem;
+      font-size: 1.02rem;
       letter-spacing: -0.01em;
       font-family: var(--font-display);
+      font-weight: 500;
+      color: var(--fg);
     }
 
     .contact {
@@ -634,21 +728,24 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: var(--surface);
-      padding: 1.2rem;
+      padding: 1.25rem;
+      box-shadow: var(--elev-ring);
     }
 
     .contact h2 {
       margin: 0;
       font-size: clamp(1.3rem, 2.1vw, 1.85rem);
       line-height: 1.2;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       font-family: var(--font-display);
+      font-weight: 500;
     }
 
     .contact p {
       margin: 0.5rem 0 0;
       color: var(--muted);
       max-inline-size: 56ch;
+      line-height: 1.55;
     }
 
     .contact-direct {
@@ -657,15 +754,18 @@
       justify-items: end;
       text-align: end;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
-      letter-spacing: 0.04em;
+      font-size: 0.76rem;
+      letter-spacing: 0;
       color: var(--muted);
     }
 
     .contact-direct strong {
       color: var(--fg);
-      font-weight: 560;
+      font-family: var(--font-display);
+      font-weight: 500;
       letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
     }
 
     .footer {
@@ -679,9 +779,10 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 0.8rem;
-      color: var(--muted);
-      font-size: 0.78rem;
-      letter-spacing: 0.02em;
+      color: var(--meta);
+      font-size: 0.8rem;
+      letter-spacing: 0;
+      font-family: var(--font-display);
     }
 
     .footer a {
@@ -707,7 +808,7 @@
 
       .section:first-of-type .hero-identity .identity-row {
         border-inline-end: none;
-        border-block-end: 1px solid var(--border);
+        border-block-end: 1px solid var(--border-soft);
       }
 
       .section:first-of-type .hero-identity .identity-row:last-child {
@@ -770,9 +871,93 @@
         padding-inline-start: 1.05rem;
       }
     }
+
+    /* Skip link — visually hidden until keyboard focus (a11y bypass) */
+    .skip-link {
+      position: absolute;
+      inset-block-start: 0.5rem;
+      inset-inline-start: -9999px;
+      z-index: 30;
+      padding: 0.5rem 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-sm);
+      color: var(--accent);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0;
+      text-decoration: none;
+      transition: inset-inline-start 150ms ease;
+    }
+
+    .skip-link:focus {
+      inset-inline-start: 0.5rem;
+      outline: 2px solid var(--accent-active);
+      outline-offset: 2px;
+    }
+
+    /* Lang switch hover affordance (active state already handled) */
+    .lang-btn:hover:not([aria-pressed='true']) {
+      color: var(--fg);
+      background: var(--surface);
+    }
+
+    /* Reduced motion — strip transform/transition for vestibular safety */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .portrait-frame img,
+      .portrait-card:hover .portrait-frame img,
+      .section:first-of-type .portrait-card:hover .portrait-frame img {
+        transform: none !important;
+      }
+    }
+
+    /* Print — parchment reaches paper, cards don't split */
+    @media print {
+      html, body {
+        background: var(--bg);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .site-header, .skip-link, .lang-switch { display: none; }
+      .section, .portrait-card, .identity-card, .focus-item,
+      .work-card, .skill-card, .entry-link, .timeline, .contact,
+      .timeline-item { break-inside: avoid; }
+      a { color: var(--fg); text-decoration: none; }
+    }
+    /* ── Motion: progressive-enhancement reveal ─────────────────────
+     * Only active when (a) JS flagged the html element (no FOUC /
+     *   no hidden content if JS fails) AND (b) the user has not asked
+     *   for reduced motion. Content settles onto the parchment with a
+     *   small lift — one motion language for entry and scroll. */
+    @media (prefers-reduced-motion: no-preference) {
+      html.js .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 0.55s cubic-bezier(0.2, 0, 0, 1),
+          transform 0.55s cubic-bezier(0.2, 0, 0, 1);
+        transition-delay: var(--reveal-d, 0ms);
+        will-change: opacity, transform;
+      }
+      html.js .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#top" data-i18n="skipToContent">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="#top">
@@ -797,20 +982,20 @@
 
   <main id="top">
     <section id="about" class="section">
-      <span class="section-kicker" data-i18n="sectionProfile">Profile</span>
+      <span class="section-kicker reveal" style="--reveal-d:0ms" data-i18n="sectionProfile">Profile</span>
       <div class="hero-grid">
         <div class="hero-main">
-          <h1 class="hero-title" data-i18n="heroTitle">Building enterprise AI products from model capability to production reliability.</h1>
-          <p class="hero-deck" data-i18n="heroDeck">
+          <h1 class="hero-title reveal" style="--reveal-d:100ms" data-i18n="heroTitle">Building enterprise AI products from model capability to production reliability.</h1>
+          <p class="hero-deck reveal" style="--reveal-d:180ms" data-i18n="heroDeck">
             I am Krislliu, an AI backend engineer currently working on Tencent Cloud ADP, CodeBuddy, and WorkBuddy.
             I focus on LLM infrastructure, prompt systems, usage billing, and resilient API services that survive real customer traffic.
           </p>
-          <div class="hero-actions">
-            <span class="hero-contact hero-contact-primary" data-i18n="heroPrimaryContact">Email: liugz97@gmail.com</span>
-            <span class="hero-contact hero-contact-secondary" data-i18n="heroGithub">GitHub: github.com/apocalypseyun</span>
+          <div class="hero-actions reveal" style="--reveal-d:260ms">
+            <a class="hero-contact hero-contact-primary" href="mailto:liugz97@gmail.com" data-i18n="heroPrimaryContact" data-i18n-attr="aria-label:heroEmailAria">Email: liugz97@gmail.com</a>
+            <a class="hero-contact hero-contact-secondary" href="https://github.com/apocalypseyun" target="_blank" rel="noopener noreferrer" data-i18n="heroGithub" data-i18n-attr="aria-label:heroGithubAria">GitHub: github.com/apocalypseyun</a>
           </div>
         </div>
-        <figure class="portrait-card" aria-label="Portrait illustration" data-i18n-attr="aria-label:portraitAria">
+        <figure class="portrait-card reveal" style="--reveal-d:120ms" aria-label="Portrait illustration" data-i18n-attr="aria-label:portraitAria">
           <div class="portrait-frame">
             <div class="portrait-media">
               <img
@@ -827,7 +1012,7 @@
           <figcaption class="portrait-caption" data-i18n="portraitCaption">Randomly selected stylized portrait from my curated avatar set.</figcaption>
         </figure>
       </div>
-      <aside class="identity-card hero-identity" aria-label="Identity overview" data-i18n-attr="aria-label:identityAria">
+      <aside class="identity-card hero-identity reveal" style="--reveal-d:340ms" aria-label="Identity overview" data-i18n-attr="aria-label:identityAria">
         <dl>
           <div class="identity-row">
             <dt data-i18n="identityCurrentLabel">Current</dt>
@@ -853,7 +1038,7 @@
       </aside>
     </section>
 
-    <section class="section" aria-labelledby="focus-title">
+    <section class="section reveal" aria-labelledby="focus-title">
       <span class="section-kicker" data-i18n="sectionCurrentFocus">Current focus</span>
       <h2 id="focus-title" data-i18n="focusTitle">What I am working on now</h2>
       <div class="focus-grid">
@@ -879,7 +1064,7 @@
       </div>
     </section>
 
-    <section id="work" class="section" aria-labelledby="work-title">
+    <section id="work" class="section reveal" aria-labelledby="work-title">
       <span class="section-kicker" data-i18n="sectionSelectedWork">Selected work</span>
       <h2 id="work-title" data-i18n="workTitle">Projects with concrete shipping scope</h2>
       <div class="work-grid">
@@ -910,7 +1095,7 @@
       </div>
     </section>
 
-    <section id="experience" class="section" aria-labelledby="exp-title">
+    <section id="experience" class="section reveal" aria-labelledby="exp-title">
       <span class="section-kicker" data-i18n="sectionExperience">Experience</span>
       <h2 id="exp-title" data-i18n="experienceTitle">Career timeline</h2>
       <div class="timeline">
@@ -939,7 +1124,7 @@
       </div>
     </section>
 
-    <section id="capabilities" class="section" aria-labelledby="skills-title">
+    <section id="capabilities" class="section reveal" aria-labelledby="skills-title">
       <span class="section-kicker" data-i18n="sectionCapabilities">Capabilities</span>
       <h2 id="skills-title" data-i18n="capabilitiesTitle">Technical depth and delivery scope</h2>
       <div class="skill-grid">
@@ -990,34 +1175,34 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="entry-title">
+    <section class="section reveal" aria-labelledby="entry-title">
       <span class="section-kicker" data-i18n="sectionEntryPoints">Entry points</span>
       <h2 id="entry-title" data-i18n="entryTitle">Start from the context you need</h2>
       <div class="link-grid">
-        <article class="entry-link">
+        <a class="entry-link" href="mailto:liugz97@gmail.com?subject=Resume%20request%20%E2%80%94%20Krislliu">
           <span data-i18n="entry1Tag">Career</span>
           <h3 data-i18n="entry1Title">Resume</h3>
           <p data-i18n="entry1Desc">Resume / CV snapshot available on request.</p>
-        </article>
-        <article class="entry-link">
+        </a>
+        <a class="entry-link" href="https://github.com/apocalypseyun" target="_blank" rel="noopener noreferrer">
           <span data-i18n="entry2Tag">Code</span>
           <h3 data-i18n="entry2Title">GitHub</h3>
           <p data-i18n="entry2Desc">github.com/apocalypseyun</p>
-        </article>
-        <article class="entry-link">
+        </a>
+        <a class="entry-link" href="mailto:liugz97@gmail.com">
           <span data-i18n="entry3Tag">Direct</span>
           <h3 data-i18n="entry3Title">Email</h3>
           <p data-i18n="entry3Desc">liugz97@gmail.com</p>
-        </article>
-        <article class="entry-link">
+        </a>
+        <a class="entry-link" href="https://t.me/ApocalypseYun" target="_blank" rel="noopener noreferrer">
           <span data-i18n="entry4Tag">Direct</span>
           <h3 data-i18n="entry4Title">Telegram</h3>
           <p data-i18n="entry4Desc">@ApocalypseYun</p>
-        </article>
+        </a>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
       <div class="contact">
         <div>
           <h2 data-i18n="contactTitle">Building AI products that balance model quality and production constraints.</h2>
@@ -1049,6 +1234,7 @@
         pageTitle: 'Krislliu | AI Backend Engineer',
         navAria: 'Primary',
         langSwitchAria: 'Language switcher',
+        skipToContent: 'Skip to content',
         portraitAria: 'Portrait illustration',
         portraitAlt: 'Stylized portrait illustration of Krislliu',
         portraitCaption: 'Randomly selected stylized portrait from my curated avatar set.',
@@ -1064,6 +1250,8 @@
         heroDeck: 'I am Krislliu, an AI backend engineer currently working on Tencent Cloud ADP, CodeBuddy, and WorkBuddy. I focus on LLM infrastructure, prompt systems, usage billing, and resilient API services that survive real customer traffic.',
         heroPrimaryContact: 'Email: liugz97@gmail.com',
         heroGithub: 'GitHub: github.com/apocalypseyun',
+        heroEmailAria: 'Email liugz97@gmail.com',
+        heroGithubAria: 'Open GitHub profile (opens in a new tab)',
         identityCurrentLabel: 'Current',
         identityCurrentValue: 'Tencent Cloud · AI Backend Engineer',
         identityBaseLabel: 'Base',
@@ -1164,6 +1352,7 @@
         pageTitle: 'Krislliu | AI 后端工程师',
         navAria: '主导航',
         langSwitchAria: '语言切换',
+        skipToContent: '跳转到正文',
         portraitAria: '人物插画',
         portraitAlt: 'Krislliu 的风格化人物插画',
         portraitCaption: '从我的头像候选集中随机展示的风格化形象。',
@@ -1179,6 +1368,8 @@
         heroDeck: '我是Krislliu，目前在腾讯云参与 ADP、CodeBuddy、WorkBuddy 的 AI 后端建设，聚焦 LLM 基础设施、Prompt 系统、用量计费与高可用 API 服务。',
         heroPrimaryContact: '邮箱：liugz97@gmail.com',
         heroGithub: 'GitHub：github.com/apocalypseyun',
+        heroEmailAria: '发送邮件至 liugz97@gmail.com',
+        heroGithubAria: '打开 GitHub 主页（新标签页打开）',
         identityCurrentLabel: '当前',
         identityCurrentValue: '腾讯云 · AI 后端工程师',
         identityBaseLabel: '所在地',
@@ -1452,6 +1643,33 @@
     document.getElementById('year').textContent = String(new Date().getFullYear());
     applyRandomPortrait();
     applyLanguage(getInitialLanguage());
+
+    // Progressive-enhancement reveal: content settles onto the parchment as it
+    // enters view. The CSS gate (html.js + prefers-reduced-motion: no-preference)
+    // already guarantees content is visible without JS or on reduced-motion; this
+    // only toggles the visible state, never hides it.
+    (function () {
+      const revealEls = Array.from(document.querySelectorAll('.reveal'));
+      if (!revealEls.length) {
+        return;
+      }
+      if (typeof IntersectionObserver === 'undefined') {
+        revealEls.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+      );
+      revealEls.forEach((el) => observer.observe(el));
+    })();
   </script>
 </body>
 </html>
